@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#171c29"/><stop offset="1" stop-color="#0b0d12"/></linearGradient>
+  <linearGradient id="marble" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b9c6ff"/><stop offset="1" stop-color="#6fd3c6"/></linearGradient>
+  <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2c46b" stop-opacity="0"/><stop offset=".5" stop-color="#f2c46b" stop-opacity=".45"/><stop offset="1" stop-color="#f6d28a" stop-opacity=".95"/></linearGradient>
+  <radialGradient id="halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#f2c46b" stop-opacity=".28"/><stop offset="1" stop-color="#f2c46b" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="512" height="512" rx="112" fill="url(#bg)"/>
+<ellipse cx="256.0" cy="370.4" rx="165.0" ry="66.0" fill="url(#halo)"/>
+<rect x="231.4" y="193.8" width="49.3" height="176.6" fill="url(#glow)"/>
+<rect x="97.0" y="147.5" width="318.0" height="10.5" rx="2" fill="url(#marble)"/>
+<rect x="106.0" y="159.0" width="300.0" height="18.0" fill="url(#marble)" opacity=".32"/>
+<rect x="110.5" y="159.0" width="10.5" height="18.0" fill="url(#marble)"/>
+<rect x="145.6" y="159.0" width="10.5" height="18.0" fill="url(#marble)"/>
+<rect x="180.6" y="159.0" width="10.5" height="18.0" fill="url(#marble)"/>
+<rect x="215.7" y="159.0" width="10.5" height="18.0" fill="url(#marble)"/>
+<rect x="250.8" y="159.0" width="10.5" height="18.0" fill="url(#marble)"/>
+<rect x="285.8" y="159.0" width="10.5" height="18.0" fill="url(#marble)"/>
+<rect x="320.9" y="159.0" width="10.5" height="18.0" fill="url(#marble)"/>
+<rect x="355.9" y="159.0" width="10.5" height="18.0" fill="url(#marble)"/>
+<rect x="391.0" y="159.0" width="10.5" height="18.0" fill="url(#marble)"/>
+<rect x="109.0" y="178.8" width="294.0" height="15.0" fill="url(#marble)"/>
+<rect x="119.4" y="193.8" width="38.3" height="5.8" fill="url(#marble)"/>
+<path d="M121.7,199.6 L155.4,199.6 L151.0,207.2 L126.0,207.2 Z" fill="url(#marble)"/>
+<path d="M126.0,207.2 L151.0,207.2 L153.0,370.4 L124.0,370.4 Z" fill="url(#marble)"/>
+<line x1="132.7" y1="210.2" x2="132.7" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/>
+<line x1="138.5" y1="210.2" x2="138.5" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/>
+<line x1="144.3" y1="210.2" x2="144.3" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/>
+<rect x="197.7" y="193.8" width="38.3" height="5.8" fill="url(#marble)"/>
+<path d="M200.0,199.6 L233.7,199.6 L229.3,207.2 L204.4,207.2 Z" fill="url(#marble)"/>
+<path d="M204.4,207.2 L229.3,207.2 L231.4,370.4 L202.3,370.4 Z" fill="url(#marble)"/>
+<line x1="211.0" y1="210.2" x2="211.0" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/>
+<line x1="216.8" y1="210.2" x2="216.8" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/>
+<line x1="222.6" y1="210.2" x2="222.6" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/>
+<rect x="276.0" y="193.8" width="38.3" height="5.8" fill="url(#marble)"/>
+<path d="M278.3,199.6 L312.0,199.6 L307.6,207.2 L282.7,207.2 Z" fill="url(#marble)"/>
+<path d="M282.7,207.2 L307.6,207.2 L309.7,370.4 L280.6,370.4 Z" fill="url(#marble)"/>
+<line x1="289.4" y1="210.2" x2="289.4" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/>
+<line x1="295.2" y1="210.2" x2="295.2" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/>
+<line x1="301.0" y1="210.2" x2="301.0" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/>
+<rect x="354.3" y="193.8" width="38.3" height="5.8" fill="url(#marble)"/>
+<path d="M356.6,199.6 L390.3,199.6 L386.0,207.2 L361.0,207.2 Z" fill="url(#marble)"/>
+<path d="M361.0,207.2 L386.0,207.2 L388.0,370.4 L359.0,370.4 Z" fill="url(#marble)"/>
+<line x1="367.7" y1="210.2" x2="367.7" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/>
+<line x1="373.5" y1="210.2" x2="373.5" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/>
+<line x1="379.3" y1="210.2" x2="379.3" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/>
+<rect x="115.0" y="370.4" width="282.0" height="6.0" rx="1.5" fill="url(#marble)" opacity="1.00"/>
+<rect x="106.0" y="377.6" width="300.0" height="6.0" rx="1.5" fill="url(#marble)" opacity="0.82"/>
+<rect x="97.0" y="384.8" width="318.0" height="6.0" rx="1.5" fill="url(#marble)" opacity="0.64"/>
+</svg>

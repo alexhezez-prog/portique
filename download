@@ -1,0 +1,9 @@
+# Aucune photo de cours ou de copie dans le dépôt public
+*.jpg
+*.jpeg
+*.heic
+*.webp
+!icon-180.png
+.DS_Store
+node_modules/
+.wrangler/

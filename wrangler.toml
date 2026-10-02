@@ -1,0 +1,12 @@
+name = "portique"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+
+[vars]
+# Adresse du site GitHub Pages (sans / final)
+ALLOWED_ORIGIN = "https://alexhezez-prog.github.io"
+# MODEL = "claude-sonnet-5-5"
+
+# Secrets à définir (jamais dans ce fichier) :
+#   npx wrangler secret put ANTHROPIC_API_KEY
+#   npx wrangler secret put ACCESS_CODE

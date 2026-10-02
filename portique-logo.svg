@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" width="640" height="220">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#171c29"/><stop offset="1" stop-color="#0b0d12"/></linearGradient>
+  <linearGradient id="marble" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b9c6ff"/><stop offset="1" stop-color="#6fd3c6"/></linearGradient>
+  <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2c46b" stop-opacity="0"/><stop offset=".5" stop-color="#f2c46b" stop-opacity=".45"/><stop offset="1" stop-color="#f6d28a" stop-opacity=".95"/></linearGradient>
+  <radialGradient id="halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#f2c46b" stop-opacity=".28"/><stop offset="1" stop-color="#f2c46b" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="640" height="220" rx="24" fill="#0d0f14"/>
+<ellipse cx="119.0" cy="165.2" rx="82.5" ry="33.0" fill="url(#halo)"/>
+<rect x="106.7" y="76.4" width="24.6" height="88.8" fill="url(#glow)"/>
+<rect x="39.5" y="52.8" width="159.0" height="5.3" rx="2" fill="url(#marble)"/>
+<rect x="44.0" y="59.0" width="150.0" height="9.0" fill="url(#marble)" opacity=".32"/>
+<rect x="46.2" y="59.0" width="5.3" height="9.0" fill="url(#marble)"/>
+<rect x="63.8" y="59.0" width="5.3" height="9.0" fill="url(#marble)"/>
+<rect x="81.3" y="59.0" width="5.3" height="9.0" fill="url(#marble)"/>
+<rect x="98.8" y="59.0" width="5.3" height="9.0" fill="url(#marble)"/>
+<rect x="116.4" y="59.0" width="5.3" height="9.0" fill="url(#marble)"/>
+<rect x="133.9" y="59.0" width="5.3" height="9.0" fill="url(#marble)"/>
+<rect x="151.4" y="59.0" width="5.3" height="9.0" fill="url(#marble)"/>
+<rect x="169.0" y="59.0" width="5.3" height="9.0" fill="url(#marble)"/>
+<rect x="186.5" y="59.0" width="5.3" height="9.0" fill="url(#marble)"/>
+<rect x="45.5" y="68.9" width="147.0" height="7.5" fill="url(#marble)"/>
+<rect x="50.7" y="76.4" width="19.2" height="2.9" fill="url(#marble)"/>
+<path d="M51.8,79.3 L68.7,79.3 L66.5,83.1 L54.0,83.1 Z" fill="url(#marble)"/>
+<path d="M54.0,83.1 L66.5,83.1 L67.5,165.2 L53.0,165.2 Z" fill="url(#marble)"/>
+<line x1="57.4" y1="86.1" x2="57.4" y2="163.2" stroke="#0d0f14" stroke-opacity=".25" stroke-width="0.73"/>
+<line x1="60.3" y1="86.1" x2="60.3" y2="163.2" stroke="#0d0f14" stroke-opacity=".25" stroke-width="0.73"/>
+<line x1="63.2" y1="86.1" x2="63.2" y2="163.2" stroke="#0d0f14" stroke-opacity=".25" stroke-width="0.73"/>
+<rect x="89.8" y="76.4" width="19.2" height="2.9" fill="url(#marble)"/>
+<path d="M91.0,79.3 L107.8,79.3 L105.7,83.1 L93.2,83.1 Z" fill="url(#marble)"/>
+<path d="M93.2,83.1 L105.7,83.1 L106.7,165.2 L92.2,165.2 Z" fill="url(#marble)"/>
+<line x1="96.5" y1="86.1" x2="96.5" y2="163.2" stroke="#0d0f14" stroke-opacity=".25" stroke-width="0.73"/>
+<line x1="99.4" y1="86.1" x2="99.4" y2="163.2" stroke="#0d0f14" stroke-opacity=".25" stroke-width="0.73"/>
+<line x1="102.3" y1="86.1" x2="102.3" y2="163.2" stroke="#0d0f14" stroke-opacity=".25" stroke-width="0.73"/>
+<rect x="129.0" y="76.4" width="19.2" height="2.9" fill="url(#marble)"/>
+<path d="M130.2,79.3 L147.0,79.3 L144.8,83.1 L132.3,83.1 Z" fill="url(#marble)"/>
+<path d="M132.3,83.1 L144.8,83.1 L145.8,165.2 L131.3,165.2 Z" fill="url(#marble)"/>
+<line x1="135.7" y1="86.1" x2="135.7" y2="163.2" stroke="#0d0f14" stroke-opacity=".25" stroke-width="0.73"/>
+<line x1="138.6" y1="86.1" x2="138.6" y2="163.2" stroke="#0d0f14" stroke-opacity=".25" stroke-width="0.73"/>
+<line x1="141.5" y1="86.1" x2="141.5" y2="163.2" stroke="#0d0f14" stroke-opacity=".25" stroke-width="0.73"/>
+<rect x="168.2" y="76.4" width="19.2" height="2.9" fill="url(#marble)"/>
+<path d="M169.3,79.3 L186.2,79.3 L184.0,83.1 L171.5,83.1 Z" fill="url(#marble)"/>
+<path d="M171.5,83.1 L184.0,83.1 L185.0,165.2 L170.5,165.2 Z" fill="url(#marble)"/>
+<line x1="174.8" y1="86.1" x2="174.8" y2="163.2" stroke="#0d0f14" stroke-opacity=".25" stroke-width="0.73"/>
+<line x1="177.7" y1="86.1" x2="177.7" y2="163.2" stroke="#0d0f14" stroke-opacity=".25" stroke-width="0.73"/>
+<line x1="180.6" y1="86.1" x2="180.6" y2="163.2" stroke="#0d0f14" stroke-opacity=".25" stroke-width="0.73"/>
+<rect x="48.5" y="165.2" width="141.0" height="3.0" rx="1.5" fill="url(#marble)" opacity="1.00"/>
+<rect x="44.0" y="168.8" width="150.0" height="3.0" rx="1.5" fill="url(#marble)" opacity="0.82"/>
+<rect x="39.5" y="172.4" width="159.0" height="3.0" rx="1.5" fill="url(#marble)" opacity="0.64"/>
+<text x="236" y="114" font-family="Georgia, 'Times New Roman', serif" font-size="56" letter-spacing="2" fill="#eceef4">Le Portique</text>
+<text x="238" y="148" font-family="-apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" letter-spacing="3.5" fill="#8d95a8">RÉVISER · COMPRENDRE · MAÎTRISER</text>
+</svg>
