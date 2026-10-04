@@ -281,26 +281,29 @@ details .rich{margin-top:8px;font-size:15px}
   .pr-foot{margin-top:16px;color:var(--mu2);font-size:9pt;text-align:center}
 }
 .katex-display{overflow-x:auto;overflow-y:hidden;padding:4px 0}
+
+#result{padding-bottom:200px}
+#result details summary{list-style:none}
+#result details summary::before{content:none}
+#result details[open] summary{margin-bottom:2px}
+.big .score small{font-size:22px;color:var(--mu);font-weight:600}
 </style>
-</head>
 <body>
 <div class="wrap">
 
   <header class="top">
     <div class="brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="26" height="26"><defs>  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#171c29"/><stop offset="1" stop-color="#0b0d12"/></linearGradient>  <linearGradient id="marble" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b9c6ff"/><stop offset="1" stop-color="#6fd3c6"/></linearGradient>  <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2c46b" stop-opacity="0"/><stop offset=".5" stop-color="#f2c46b" stop-opacity=".45"/><stop offset="1" stop-color="#f6d28a" stop-opacity=".95"/></linearGradient>  <radialGradient id="halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#f2c46b" stop-opacity=".28"/><stop offset="1" stop-color="#f2c46b" stop-opacity="0"/></radialGradient></defs><rect width="512" height="512" rx="112" fill="url(#bg)"/><ellipse cx="256.0" cy="370.4" rx="165.0" ry="66.0" fill="url(#halo)"/><rect x="231.4" y="193.8" width="49.3" height="176.6" fill="url(#glow)"/><rect x="97.0" y="147.5" width="318.0" height="10.5" rx="2" fill="url(#marble)"/><rect x="106.0" y="159.0" width="300.0" height="18.0" fill="url(#marble)" opacity=".32"/><rect x="110.5" y="159.0" width="10.5" height="18.0" fill="url(#marble)"/><rect x="145.6" y="159.0" width="10.5" height="18.0" fill="url(#marble)"/><rect x="180.6" y="159.0" width="10.5" height="18.0" fill="url(#marble)"/><rect x="215.7" y="159.0" width="10.5" height="18.0" fill="url(#marble)"/><rect x="250.8" y="159.0" width="10.5" height="18.0" fill="url(#marble)"/><rect x="285.8" y="159.0" width="10.5" height="18.0" fill="url(#marble)"/><rect x="320.9" y="159.0" width="10.5" height="18.0" fill="url(#marble)"/><rect x="355.9" y="159.0" width="10.5" height="18.0" fill="url(#marble)"/><rect x="391.0" y="159.0" width="10.5" height="18.0" fill="url(#marble)"/><rect x="109.0" y="178.8" width="294.0" height="15.0" fill="url(#marble)"/><rect x="119.4" y="193.8" width="38.3" height="5.8" fill="url(#marble)"/><path d="M121.7,199.6 L155.4,199.6 L151.0,207.2 L126.0,207.2 Z" fill="url(#marble)"/><path d="M126.0,207.2 L151.0,207.2 L153.0,370.4 L124.0,370.4 Z" fill="url(#marble)"/><line x1="132.7" y1="210.2" x2="132.7" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/><line x1="138.5" y1="210.2" x2="138.5" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/><line x1="144.3" y1="210.2" x2="144.3" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/><rect x="197.7" y="193.8" width="38.3" height="5.8" fill="url(#marble)"/><path d="M200.0,199.6 L233.7,199.6 L229.3,207.2 L204.4,207.2 Z" fill="url(#marble)"/><path d="M204.4,207.2 L229.3,207.2 L231.4,370.4 L202.3,370.4 Z" fill="url(#marble)"/><line x1="211.0" y1="210.2" x2="211.0" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/><line x1="216.8" y1="210.2" x2="216.8" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/><line x1="222.6" y1="210.2" x2="222.6" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/><rect x="276.0" y="193.8" width="38.3" height="5.8" fill="url(#marble)"/><path d="M278.3,199.6 L312.0,199.6 L307.6,207.2 L282.7,207.2 Z" fill="url(#marble)"/><path d="M282.7,207.2 L307.6,207.2 L309.7,370.4 L280.6,370.4 Z" fill="url(#marble)"/><line x1="289.4" y1="210.2" x2="289.4" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/><line x1="295.2" y1="210.2" x2="295.2" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/><line x1="301.0" y1="210.2" x2="301.0" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/><rect x="354.3" y="193.8" width="38.3" height="5.8" fill="url(#marble)"/><path d="M356.6,199.6 L390.3,199.6 L386.0,207.2 L361.0,207.2 Z" fill="url(#marble)"/><path d="M361.0,207.2 L386.0,207.2 L388.0,370.4 L359.0,370.4 Z" fill="url(#marble)"/><line x1="367.7" y1="210.2" x2="367.7" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/><line x1="373.5" y1="210.2" x2="373.5" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/><line x1="379.3" y1="210.2" x2="379.3" y2="368.4" stroke="#0d0f14" stroke-opacity=".25" stroke-width="1.45"/><rect x="115.0" y="370.4" width="282.0" height="6.0" rx="1.5" fill="url(#marble)" opacity="1.00"/><rect x="106.0" y="377.6" width="300.0" height="6.0" rx="1.5" fill="url(#marble)" opacity="0.82"/><rect x="97.0" y="384.8" width="318.0" height="6.0" rx="1.5" fill="url(#marble)" opacity="0.64"/></svg><span style="color:var(--tx);font-family:Georgia,serif;font-weight:400;letter-spacing:.02em;font-size:19px">Le Portique</span></div>
-    <button class="ghost" id="btn-quit" onclick="askQuit()" style="display:none">Quitter</button>
+    <button class="ghost" id="btn-quit" onclick="askQuit()" style="display:none">Accueil</button>
   </header>
   <nav class="steps" id="steps" style="display:none">
-    <div data-s="cours">Cours</div><div data-s="fiche">Fiche</div><div data-s="test">Test</div><div data-s="bilan">Bilan</div>
+    <div>Fiche</div><div>Quiz</div><div>Note</div>
   </nav>
 
   <!-- ACCUEIL -->
   <section class="screen on" id="home">
-    <h1>Révise ton cours en quatre étapes.</h1>
-    <p class="lead">Photographie ton cours. Tu obtiens une fiche flash, un test en trois paliers et un bilan de tes points faibles.</p>
-
+    <h1>Révise ton cours.</h1>
+    <p class="lead">Prends ton cours en photo : tu obtiens une fiche, une carte mentale et un quiz de 20 questions noté sur 20.</p>
     <div id="resume"></div>
-
     <label class="drop" for="file">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>
       <b id="drop-t">Photographier le cours</b>
@@ -309,59 +312,31 @@ details .rich{margin-top:8px;font-size:15px}
     <input type="file" id="file" accept="image/*" multiple hidden>
     <div class="thumbs" id="thumbs"></div>
     <div class="err" id="home-err"></div>
-
     <ol class="how">
-      <li><b>Analyse</b> : repérage des notions clés, tu choisis lesquelles travailler.</li>
-      <li><b>Fiche flash</b> : l'essentiel à retenir et les pièges classiques.</li>
-      <li><b>Test</b> : QCM, questions rédigées corrigées, puis un exercice type contrôle.</li>
-      <li><b>Bilan</b> : tes notions fragiles, et un test ciblé pour les retravailler.</li>
+      <li><b>Fiche</b> : l'essentiel du cours, la carte mentale et les pièges à éviter.</li>
+      <li><b>Quiz</b> : 20 questions, chacune corrigée et expliquée.</li>
+      <li><b>Note sur 20</b> : refais tes erreurs ou enchaîne 20 nouvelles questions.</li>
     </ol>
-
     <div class="card" id="activate" style="display:none">
       <h3>Activer cet appareil</h3>
-      <p class="small muted" style="margin:0 0 10px">Saisis le code familial (une seule fois sur cet appareil).</p>
+      <p class="small muted" style="margin:0 0 10px">Saisis le code d'accès (une seule fois sur cet appareil).</p>
       <div class="row"><input class="field" id="act-code" type="password" autocomplete="off" placeholder="Code"><button class="btn sec" style="flex:0 0 110px;min-height:44px" onclick="activateFromField()">Activer</button></div>
     </div>
   </section>
 
   <!-- CHARGEMENT -->
   <section class="screen" id="loading">
-    <div class="loader">
-      <div class="spin"></div>
-      <h2 id="load-t">Analyse du cours</h2>
-      <p id="load-m">Lecture des pages…</p>
-    </div>
-  </section>
-
-  <!-- NOTIONS -->
-  <section class="screen" id="notions">
-    <span class="eyebrow" id="n-mat"></span>
-    <h1 id="n-titre" style="font-size:24px"></h1>
-    <p class="lead small">Vérifie le niveau et décoche les notions que tu ne veux pas travailler.</p>
-    <h3>Niveau</h3>
-    <div class="chips" id="n-niv" style="margin-bottom:20px"></div>
-    <h3>Notions repérées</h3>
-    <div id="n-list"></div>
+    <div class="loader"><div class="spin"></div><h2 id="load-t"></h2><p id="load-m"></p></div>
   </section>
 
   <!-- FICHE -->
   <section class="screen" id="fiche">
-    <span class="eyebrow">Fiche flash</span>
+    <span class="eyebrow" id="f-mat"></span>
     <h1 id="f-titre" style="font-size:24px"></h1>
     <div id="f-body"></div>
   </section>
 
-  <!-- INTRO DE PALIER -->
-  <section class="screen" id="pintro">
-    <div style="padding-top:8vh">
-      <span class="eyebrow" id="pi-n"></span>
-      <h1 id="pi-t"></h1>
-      <p class="lead" id="pi-d"></p>
-      <div id="pi-state"></div>
-    </div>
-  </section>
-
-  <!-- QCM -->
+  <!-- QUIZ -->
   <section class="screen" id="qcm">
     <div class="phead"><span id="q-h"></span><span id="q-c"></span></div>
     <div class="prog"><i id="q-p"></i></div>
@@ -371,64 +346,35 @@ details .rich{margin-top:8px;font-size:15px}
     <div id="q-fb"></div>
   </section>
 
-  <!-- QUESTION COURTE -->
-  <section class="screen" id="courte">
-    <div class="phead"><span>Palier 2 · Questions rédigées</span><span id="c-c"></span></div>
-    <div class="prog"><i id="c-p"></i></div>
-    <div style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag ac" id="c-verbe"></span><span class="tag" id="c-notion"></span><span class="tag">3 points</span></div>
-    <div class="qtext rich" id="c-t"></div>
-    <div id="c-zone"></div>
-  </section>
-
-  <!-- EXERCICE -->
-  <section class="screen" id="exo">
-    <div class="phead"><span>Palier 3 · Exercice</span><span id="e-dur"></span></div>
-    <span class="tag ac" id="e-format"></span>
-    <h2 id="e-titre" style="margin-top:10px"></h2>
-    <div class="rich" id="e-enonce"></div>
-    <div id="e-doc"></div>
-    <div id="e-sq"></div>
-    <div id="e-res"></div>
-  </section>
-
-  <!-- BILAN -->
-  <section class="screen" id="bilan">
-    <span class="eyebrow" id="b-eye">Bilan</span>
-    <div class="big"><span class="score" id="b-score"></span><span class="muted" id="b-sub"></span></div>
-    <p class="muted" id="b-msg" style="margin:0"></p>
-    <div class="kpis" id="b-kpis"></div>
+  <!-- NOTE -->
+  <section class="screen" id="result">
+    <span class="eyebrow" id="r-eye"></span>
+    <div class="big"><span class="score" id="r-score"></span></div>
+    <p id="r-msg" style="margin:0 0 4px;font-size:17px"></p>
+    <p class="muted small" id="r-sub" style="margin:0 0 18px"></p>
+    <div id="r-ref" style="margin-bottom:22px"></div>
     <h3>Par notion</h3>
-    <div id="b-notions"></div>
-    <div id="b-appr"></div>
+    <div id="r-notions"></div>
+    <div id="r-miss"></div>
   </section>
 
 </div>
 
 <div class="bar" id="bar" style="display:none"><div class="in" id="bar-in"></div></div>
-<input type="file" id="ans-file" accept="image/*" hidden>
-
-<div id="sheet" onclick="if(event.target.id==='sheet')closeSheet()">
-  <div class="panel">
-    <h2>Imprimer le bilan</h2>
-    <p class="small muted" style="margin:0 0 8px">Sur iPhone, l'aperçu d'impression permet aussi d'enregistrer un PDF ou de l'envoyer.</p>
-    <div id="sheet-opts"></div>
-    <div class="row" style="margin-top:12px"><button class="btn sec" onclick="closeSheet()">Annuler</button><button class="btn pri" onclick="doPrint()">Imprimer</button></div>
-  </div>
-</div>
 <div id="ref" role="dialog" aria-modal="true">
-  <div class="rh"><div><b id="ref-t"></b><small id="ref-s"></small></div><button onclick="closeRef()">Reprendre</button></div>
+  <div class="rh"><div><b id="ref-t"></b><small id="ref-s"></small></div><button onclick="closeRef()">Fermer</button></div>
   <div class="rb" id="ref-b"></div>
 </div>
 <div id="print"></div>
 
 <script>
 /* =========================================================
-   CONFIGURATION — adresse du Cloudflare Worker de Le Portique.
-   Activation d'un appareil : https://VOTRE-PSEUDO.github.io/portique/#cle=CODE
+   CONFIGURATION
+   Activation d'un appareil : https://alexhezez-prog.github.io/portique/#cle=CODE
    Démonstration hors ligne (sans appel à l'IA) : …/portique/#demo
    ========================================================= */
 const DEFAULT_WORKER_URL = "https://portique.alexhezez.workers.dev";
-const SIZES = { qcm: 6, courtes: 4, retravailQcm: 5, retravailCourtes: 2 };
+const QUIZ_SIZE = 20;                 // note sur 20
 const SEUIL_MAITRISE = 0.75, SEUIL_FRAGILE = 0.5;
 
 const store = {
@@ -436,6 +382,7 @@ const store = {
   set(k,v){ try{ localStorage.setItem("portique:"+k, JSON.stringify(v)); }catch{} },
   del(k){ try{ localStorage.removeItem("portique:"+k); }catch{} }
 };
+store.del("lycee");   // ancienne version
 let cfg = store.get("cfg", {url:"", code:""});
 if(DEFAULT_WORKER_URL && !cfg.custom) cfg.url = DEFAULT_WORKER_URL;
 let DEMO_MODE = false;
@@ -446,22 +393,15 @@ let DEMO_MODE = false;
   if(h.has("demo") || h.get("cle")) history.replaceState(null, "", location.pathname);
 })();
 
-/* ---------- État de la séance ---------- */
+/* ---------- État ---------- */
 let photos = [];
-let S = null;            // séance en cours (sauvegardée pour reprise)
-const pending = {};      // promesses de génération en cours (non sauvegardées)
-let ansPhotos = [];      // photos jointes à la réponse en cours
-const PALIERS = {
-  qcm:      {n:"Palier 1", t:"Connaissances", d:(k)=>`${k} questions à choix multiples. Réponds sans relire ta fiche.`},
-  courtes:  {n:"Palier 2", t:"Questions rédigées", d:(k)=>`${k} questions à rédiger, notées sur 3 points chacune selon trois critères. Tu peux répondre en photo.`},
-  exercice: {n:"Palier 3", t:"Exercice d'application", d:()=>`Un exercice type contrôle. Rédige tes réponses ou photographie ta copie, puis rends-la pour correction.`}
-};
-const save = () => { if(S) store.set("lycee", S); };
+let S = null;             // séance en cours (sauvegardée pour reprise)
+const pending = {};       // générations en cours
+const save = () => { if(S) store.set("seance", S); };
 
 /* ---------- Utilitaires ---------- */
 const $ = (id) => document.getElementById(id);
 function esc(s){ return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
-/* Texte riche minimal : **gras**, listes "- ", paragraphes */
 function rich(s){
   const lines = esc(s).replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").split(/\n/);
   let out = "", inList = false, para = [];
@@ -478,24 +418,23 @@ function math(el){
   const run = () => { try{ renderMathInElement(el,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false}); }catch{} };
   if(window.renderMathInElement) run(); else window.addEventListener("load", run, {once:true});
 }
-function go(id){
+function go(id, keepScroll){
   document.querySelectorAll(".screen").forEach(s=>s.classList.toggle("on", s.id===id));
-  const stepOf = {notions:"cours", fiche:"fiche", pintro:"test", qcm:"test", courte:"test", exo:"test", bilan:"bilan"}[id];
+  const stepOf = {fiche:"fiche", qcm:"quiz", result:"resultat"}[id];
   $("steps").style.display = stepOf ? "flex" : "none";
   $("btn-quit").style.display = stepOf ? "block" : "none";
   if(stepOf){
-    const order = ["cours","fiche","test","bilan"], k = order.indexOf(stepOf);
+    const order = ["fiche","quiz","resultat"], k = order.indexOf(stepOf);
     document.querySelectorAll("#steps div").forEach((d,i)=>{ d.className = i<k ? "done" : i===k ? "cur" : ""; });
   }
-  window.scrollTo(0,0);
+  if(!keepScroll) window.scrollTo(0,0);
   math(document.querySelector(".screen.on"));
 }
 function bar(html){ const b=$("bar"); if(!html){ b.style.display="none"; return; } $("bar-in").innerHTML = html; b.style.display="block"; math($("bar-in")); }
 function showErr(msg){ const e=$("home-err"); e.textContent = msg; e.classList.add("on"); }
 function notionLabel(id){ return (S.notions.find(n=>n.id===id)||{}).label || ""; }
-function selectedNotions(){ return S.notions.filter(n=>n.on); }
 function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
-function fmtPts(x){ return String(Math.round(x*2)/2).replace(".",","); }
+function fmt(x){ return String(Math.round(x*10)/10).replace(".",","); }
 
 let loadTimer;
 function loading(title, msgs){
@@ -526,21 +465,22 @@ async function api(step, payload){
 }
 function ctxPayload(notions){
   return { matiere:S.matiere, niveau:S.niveau, titre:S.titre, transcription:S.transcription,
-           notions:(notions||selectedNotions()).map(({id,label,resume})=>({id,label,resume})) };
+           notions:(notions||S.notions).map(({id,label,resume})=>({id,label,resume})) };
 }
 
 /* =========================================================
-   1. ACCUEIL ET PHOTOS
+   ACCUEIL ET PHOTOS
    ========================================================= */
 function renderHome(){
   $("thumbs").innerHTML = photos.map((p,i)=>`<div class="thumb"><img src="${p.preview}" alt=""><span class="n">${i+1}</span><button onclick="removePhoto(${i})" aria-label="Retirer">✕</button></div>`).join("");
-  $("drop-t").textContent = photos.length ? (photos.length<4 ? "Ajouter une page" : "4 pages maximum") : "Photographier le cours";
-  const saved = store.get("lycee", null);
-  $("resume").innerHTML = saved && saved.phase && saved.phase!=="done"
-    ? `<div class="card"><div class="small muted">Séance en cours</div><b>${esc(saved.titre)}</b><div class="row" style="margin-top:12px"><button class="btn sec" style="min-height:44px" onclick="dropSession()">Abandonner</button><button class="btn pri" style="min-height:44px" onclick="resumeSession()">Reprendre</button></div></div>` : "";
-  bar(photos.length ? `<button class="btn pri" onclick="startAnalyse()">Analyser mon cours (${photos.length} page${photos.length>1?"s":""})</button>` : null);
+  $("drop-t").textContent = DEMO_MODE && !photos.length ? "Mode démonstration" : photos.length ? (photos.length<4 ? "Ajouter une page" : "4 pages maximum") : "Photographier le cours";
+  const saved = store.get("seance", null);
+  $("resume").innerHTML = saved && saved.titre
+    ? `<div class="card"><div class="small muted">Cours en cours</div><b>${esc(saved.titre)}</b><div class="row" style="margin-top:12px"><button class="btn sec" style="min-height:44px" onclick="dropSession()">Effacer</button><button class="btn pri" style="min-height:44px" onclick="resumeSession()">Reprendre</button></div></div>` : "";
+  if(photos.length) bar(`<button class="btn pri" onclick="startAnalyse()">Créer ma fiche et mon quiz</button>`);
+  else if(DEMO_MODE) bar(`<button class="btn pri" onclick="startAnalyse()">Lancer la démonstration</button>`);
+  else bar(null);
   if(!DEMO_MODE && (!cfg.url || !cfg.code)) $("activate").style.display = "block";
-  if(DEMO_MODE && !photos.length) bar(`<button class="btn pri" onclick="startAnalyse()">Lancer la démonstration</button>`);
 }
 function removePhoto(i){ photos.splice(i,1); renderHome(); }
 $("file").addEventListener("change", async e=>{
@@ -569,142 +509,288 @@ function activateFromField(){
   cfg = {url:DEFAULT_WORKER_URL||cfg.url, code}; store.set("cfg", cfg);
   $("activate").style.display = "none"; $("home-err").classList.remove("on");
 }
-function handleErr(err, where){
-  stopLoading();
-  if(where==="home"){ goHome(); showErr(err.message); if(err.activate) $("activate").style.display="block"; }
-  return err.message;
-}
-function goHome(){ go("home"); renderHome(); }
-function dropSession(){ store.del("lycee"); S = null; renderHome(); }
-function askQuit(){ if(confirm("Quitter la séance ? Tu pourras la reprendre depuis l'accueil.")){ save(); goHome(); } }
+function goHome(){ stopLoading(); go("home"); renderHome(); }
+function dropSession(){ store.del("seance"); S = null; renderHome(); }
+function askQuit(){ if(confirm("Revenir à l'accueil ? Tu pourras reprendre ce cours.")){ save(); goHome(); } }
+function newCourse(){ store.del("seance"); S = null; photos = []; goHome(); }
 
 /* =========================================================
-   2. ANALYSE → NOTIONS
+   ANALYSE → fiche + quiz préparés en parallèle
    ========================================================= */
 async function startAnalyse(){
   $("home-err").classList.remove("on");
-  loading("Analyse du cours", ["Lecture des pages…","Transcription du cours…","Repérage des notions clés…","Encore quelques secondes…"]);
+  loading("Lecture du cours", ["Lecture des pages…","Repérage de l'essentiel…","Encore quelques secondes…"]);
   try{
     const d = await api("analyse", {images: photos.map(p=>({media_type:p.media_type, data:p.data}))});
     stopLoading();
     if(!d.readable){ goHome(); showErr(d.problem); return; }
-    S = { phase:"notions", matiere:d.matiere, niveau:d.niveau, titre:d.titre, transcription:d.transcription,
-          notions:d.notions.map(n=>({...n, on:true})), fiche:null, paliers:{}, order:[], cur:null,
-          retravail:false, round:1, asked:[], history:[] };
-    photos = []; save(); showNotions();
-  }catch(err){ handleErr(err, "home"); }
-}
-function showNotions(){
-  $("n-mat").textContent = S.matiere;
-  $("n-titre").textContent = S.titre;
-  $("n-niv").innerHTML = ["2de","1re","Tle"].map(n=>`<button class="chip ${S.niveau===n?"on":""}" onclick="setNiveau('${n}')">${{"2de":"Seconde","1re":"Première","Tle":"Terminale"}[n]}</button>`).join("");
-  $("n-list").innerHTML = S.notions.map((n,i)=>`<button class="notion ${n.on?"on":""}" onclick="toggleNotion(${i})"><span class="ck"></span><span><b>${esc(n.label)}</b><small>${esc(n.resume)}</small></span></button>`).join("");
-  go("notions");
-  const k = selectedNotions().length;
-  bar(`<button class="btn pri" ${k?"":"disabled"} onclick="startGeneration()">Créer ma fiche et mon test</button><div class="hint center">${k} notion${k>1?"s":""} sélectionnée${k>1?"s":""}</div>`);
-}
-function setNiveau(n){ S.niveau = n; save(); showNotions(); }
-function toggleNotion(i){ S.notions[i].on = !S.notions[i].on; save(); showNotions(); }
-
-/* =========================================================
-   3. GÉNÉRATION EN PARALLÈLE : fiche + 3 paliers
-   ========================================================= */
-function fire(kind){
-  const P = S.paliers;
-  if(kind==="fiche"){
-    if(pending.fiche || S.fiche) return pending.fiche;
-    pending.fiche = api("fiche", ctxPayload()).then(d=>{ S.fiche = d; save(); return d; })
-      .catch(err=>{ S.ficheError = err.message; throw err; }).finally(()=>{ delete pending.fiche; refresh(); });
-    pending.fiche.catch(()=>{});
-    return pending.fiche;
+    S = { matiere:d.matiere, niveau:d.niveau, titre:d.titre, transcription:d.transcription,
+          notions:d.notions.map(n=>({...n, on:true})), fiche:null, ficheTab:"fiche",
+          series:[], cur:null, asked:[], phase:"fiche" };
+    photos = []; save();
+    fireFiche(); queueSeries();
+    showFiche();
+  }catch(err){
+    goHome(); showErr(err.message);
+    if(err.activate) $("activate").style.display = "block";
   }
-  const p = P[kind]; if(!p) return;
-  if(p.status==="ready" || pending[kind]) return pending[kind];
-  p.status = "loading"; p.error = null;
-  const notions = S.notions.filter(n=>p.notions.includes(n.id));
-  const payload = {...ctxPayload(notions), avoid:S.asked};
-  if(kind==="qcm") payload.count = S.retravail ? SIZES.retravailQcm : SIZES.qcm;
-  if(kind==="courtes") payload.count = S.retravail ? SIZES.retravailCourtes : SIZES.courtes;
-  pending[kind] = api(kind, payload).then(d=>{
-    p.data = d; p.status = "ready"; p.answers = {}; p.i = 0; save(); return d;
-  }).catch(err=>{ p.status = "error"; p.error = err.message; save(); throw err; })
-    .finally(()=>{ delete pending[kind]; refresh(); });
-  pending[kind].catch(()=>{});
-  return pending[kind];
 }
-function startGeneration(){
-  const ids = selectedNotions().map(n=>n.id);
-  S.order = ["qcm","courtes","exercice"];
-  S.paliers = {}; S.order.forEach(k=>S.paliers[k] = {status:"idle", notions:ids});
-  S.fiche = null; S.ficheError = null; S.phase = "fiche"; save();
-  fire("fiche"); S.order.forEach(fire);
-  showFiche();
+
+function fireFiche(){
+  if(S.fiche || pending.fiche) return;
+  S.ficheError = null;
+  const mine = S;
+  pending.fiche = api("fiche", ctxPayload())
+    .then(d=>{ mine.fiche = d; })
+    .catch(err=>{ mine.ficheError = err.message; })
+    .finally(()=>{ delete pending.fiche; if(S===mine){ save(); refresh(); } });
 }
-/* Rafraîchit l'écran visible quand une génération se termine */
+
+/* Une série = 20 questions, générées en deux lots de 10 en parallèle
+   (notions réparties entre les deux lots pour éviter les doublons). */
+function queuedIndex(){ return S.series.findIndex(s=>!s.retry && !s.started); }
+function queueSeries(){
+  if(queuedIndex() >= 0) return;
+  S.series.push({status:"loading", questions:null, answers:{}, i:0});
+  save(); genSeries(S.series.length-1);
+}
+function genSeries(idx){
+  const s = S.series[idx], mine = S;
+  if(pending["s"+idx]) return;
+  s.status = "loading"; s.error = null;
+  const avoid = S.asked.slice(-60), N = S.notions;
+  let job;
+  if(N.length >= 2){
+    const A = N.filter((_,i)=>i%2===0), B = N.filter((_,i)=>i%2===1);
+    job = Promise.all([
+      api("qcm", {...ctxPayload(A), count:QUIZ_SIZE/2, avoid}),
+      api("qcm", {...ctxPayload(B), count:QUIZ_SIZE/2, avoid})
+    ]).then(([a,b])=>a.questions.concat(b.questions));
+  } else {
+    job = api("qcm", {...ctxPayload(), count:QUIZ_SIZE/2, avoid}).then(a=>
+      api("qcm", {...ctxPayload(), count:QUIZ_SIZE/2, avoid:avoid.concat(a.questions.map(q=>q.question))})
+        .then(b=>a.questions.concat(b.questions)));
+  }
+  pending["s"+idx] = job.then(qs=>{
+    const order = Object.fromEntries(N.map((n,i)=>[n.id,i]));
+    qs.sort((x,y)=>(order[x.notion_id]??99)-(order[y.notion_id]??99));   // dans l'ordre du cours
+    s.questions = qs.map(q=>({...q, order:shuffle([0,1,2,3])}));
+    s.status = "ready";
+    mine.asked.push(...qs.map(q=>q.question));
+  }).catch(err=>{ s.status = "error"; s.error = err.message; })
+    .finally(()=>{ delete pending["s"+idx]; if(S===mine){ save(); refresh(); } });
+}
 function refresh(){
   const on = document.querySelector(".screen.on"); if(!on || !S) return;
-  if(on.id==="fiche") showFiche();
-  if(on.id==="pintro") showPalierIntro(S.cur.kind);
+  if(on.id==="fiche") showFiche(true);
+  if(on.id==="result") showResult(true);
+  if(on.id==="loading" && S.waitQuiz){
+    const s = S.series[queuedIndex()];
+    if(s && s.status==="ready"){ S.waitQuiz = false; stopLoading(); startQuiz(); }
+    else if(s && s.status==="error"){ S.waitQuiz = false; stopLoading(); showResult(); }
+  }
 }
 
 /* =========================================================
-   4. FICHE FLASH
+   FICHE
    ========================================================= */
 const TYPE_LABEL = {definition:"Définition", propriete:"Propriété", formule:"Formule", date:"Date", methode:"Méthode", exemple:"Exemple", vocabulaire:"Vocabulaire"};
-function showFiche(){
-  S.phase = S.phase==="bilan" ? "bilan" : "fiche"; save();
+function showFiche(keepScroll){
   $("f-titre").textContent = S.titre;
+  $("f-mat").textContent = S.matiere;
   const f = S.fiche;
   if(!f){
     $("f-body").innerHTML = S.ficheError && !pending.fiche
-      ? `<div class="err on">${esc(S.ficheError)}</div><button class="btn sec" onclick="S.ficheError=null;fire('fiche');showFiche()">Réessayer</button>`
+      ? `<div class="err on">${esc(S.ficheError)}</div><button class="btn sec" onclick="fireFiche();showFiche()">Réessayer</button>`
       : `<p class="muted small"><span class="minispin"></span>&nbsp; Rédaction de la fiche…</p><div class="skel" style="width:90%"></div><div class="skel" style="width:70%"></div><div class="skel" style="width:82%"></div><div class="skel" style="width:60%"></div>`;
   } else {
     const tab = S.ficheTab || "fiche";
     $("f-body").innerHTML = `<div class="tabs"><button class="${tab==="fiche"?"on":""}" onclick="S.ficheTab='fiche';save();showFiche()">Fiche</button><button class="${tab==="carte"?"on":""}" onclick="S.ficheTab='carte';save();showFiche()">Carte mentale</button></div>`
       + (tab==="carte" ? mindmapBlock("fiche") : ficheHTML(f));
   }
-  go("fiche");
-  if(S.phase==="bilan"){ bar(`<button class="btn sec" onclick="showBilan()">Retour au bilan</button>`); return; }
-  const q = S.paliers.qcm || {};
-  const label = q.status==="ready" ? "Commencer le test" : q.status==="error" ? "Commencer le test" : `<span class="minispin"></span>&nbsp;Préparation du test…`;
-  bar(`<button class="btn pri" ${q.status==="loading"?"disabled":""} onclick="startTest()">${label}</button>${f?`<div class="hint center">Lis la fiche en entier : le palier 1 se fait sans la relire.</div>`:""}`);
+  go("fiche", keepScroll);
+  if(S.phase==="result"){ bar(`<button class="btn sec" onclick="showResult()">Retour au résultat</button>`); return; }
+  const s = S.series[queuedIndex()] || {};
+  bar(s.status==="ready" ? `<button class="btn pri" onclick="startQuiz()">Commencer le quiz · ${s.questions.length} questions</button>`
+    : s.status==="error" ? `<button class="btn sec" onclick="genSeries(queuedIndex());showFiche(true)">Réessayer de préparer le quiz</button><div class="hint center">${esc(s.error)}</div>`
+    : `<button class="btn pri" disabled><span class="minispin"></span>&nbsp;Préparation du quiz…</button><div class="hint center">Lis ta fiche en attendant.</div>`);
 }
 function ficheHTML(f){
-    let h = `<div class="essentiel rich">${rich(f.essentiel)}</div>`;
-    for(const n of S.notions.filter(n=>n.on || f.blocs.some(b=>b.notion_id===n.id))){
-      const bl = f.blocs.filter(b=>b.notion_id===n.id); if(!bl.length) continue;
-      h += `<div class="fsec">${esc(n.label)}</div>` + bl.map(b=>`<div class="bloc"><div class="bt"><span class="ty ${esc(b.type)}">${TYPE_LABEL[b.type]||esc(b.type)}</span><b>${esc(b.titre)}</b></div><div class="rich">${rich(b.contenu)}</div></div>`).join("");
-    }
-    const orphan = f.blocs.filter(b=>!S.notions.some(n=>n.id===b.notion_id));
-    if(orphan.length) h += `<div class="fsec">Autres points</div>` + orphan.map(b=>`<div class="bloc"><div class="bt"><b>${esc(b.titre)}</b></div><div class="rich">${rich(b.contenu)}</div></div>`).join("");
-    if(f.pieges.length) h += `<div class="fsec">Pièges classiques</div>` + f.pieges.map(p=>`<div class="piege"><div class="p rich">${rich(p.piege)}</div><div class="c rich">${rich(p.correction)}</div></div>`).join("");
-    return h;
+  let h = `<div class="essentiel rich">${rich(f.essentiel)}</div>`;
+  for(const n of S.notions){
+    const bl = f.blocs.filter(b=>b.notion_id===n.id); if(!bl.length) continue;
+    h += `<div class="fsec">${esc(n.label)}</div>` + bl.map(b=>`<div class="bloc"><div class="bt"><span class="ty ${esc(b.type)}">${TYPE_LABEL[b.type]||esc(b.type)}</span><b>${esc(b.titre)}</b></div><div class="rich">${rich(b.contenu)}</div></div>`).join("");
+  }
+  const orphan = f.blocs.filter(b=>!S.notions.some(n=>n.id===b.notion_id));
+  if(orphan.length) h += `<div class="fsec">Autres points</div>` + orphan.map(b=>`<div class="bloc"><div class="bt"><b>${esc(b.titre)}</b></div><div class="rich">${rich(b.contenu)}</div></div>`).join("");
+  if(f.pieges.length) h += `<div class="fsec">Pièges classiques</div>` + f.pieges.map(p=>`<div class="piege"><div class="p rich">${rich(p.piege)}</div><div class="c rich">${rich(p.correction)}</div></div>`).join("");
+  return h;
 }
 
 /* =========================================================
-   CONSULTATION PENDANT LA CORRECTION : fiche flash / carte mentale
+   QUIZ
+   ========================================================= */
+function startQuiz(){
+  const idx = queuedIndex(); if(idx<0) return;
+  S.cur = idx; S.series[idx].started = true; S.phase = "quiz"; save();
+  showQcm();
+}
+function showQcm(){
+  const s = S.series[S.cur], qs = s.questions, q = qs[s.i];
+  if(!q){ finishSeries(); return; }
+  $("q-h").textContent = s.retry ? "Mes erreurs" : "Quiz";
+  $("q-c").textContent = `${s.i+1} / ${qs.length}`;
+  $("q-p").style.width = (s.i/qs.length*100)+"%";
+  $("q-notion").textContent = notionLabel(q.notion_id);
+  $("q-t").innerHTML = rich(q.question);
+  const a = s.answers[s.i];
+  $("q-ch").innerHTML = q.order.map((ci,k)=>{
+    let cls = "";
+    if(a!==undefined){ cls = ci===q.answer_index ? "ok" : ci===a ? "ko" : "dim"; }
+    return `<button class="choice ${cls}" ${a!==undefined?"disabled":""} onclick="answerQcm(${ci})"><span class="l">${"ABCD"[k]}</span><span class="rich">${rich(q.choices[ci])}</span></button>`;
+  }).join("");
+  if(a!==undefined){
+    const ok = a===q.answer_index;
+    $("q-fb").innerHTML = `<div class="fb ${ok?"ok":"ko"}"><b class="v">${ok?"Exact.":"Non."}</b><div class="rich">${rich(q.explanation)}</div></div>${refButtons()}`;
+    bar(`<button class="btn pri" onclick="nextQcm()">${s.i<qs.length-1?"Question suivante":"Voir ma note"}</button>`);
+  } else { $("q-fb").innerHTML = ""; bar(null); }
+  go("qcm");
+  // la série suivante se prépare pendant que l'élève répond
+  if(!s.retry && s.i >= Math.floor(qs.length/2)) queueSeries();
+}
+function answerQcm(ci){
+  const s = S.series[S.cur]; s.answers[s.i] = ci; save(); showQcm();
+  try{ navigator.vibrate && navigator.vibrate(ci===s.questions[s.i].answer_index?15:[30,40,30]); }catch{}
+}
+function nextQcm(){ S.series[S.cur].i++; save(); showQcm(); }
+function finishSeries(){ const s = S.series[S.cur]; s.status = "done"; S.phase = "result"; save(); showResult(); }
+
+/* =========================================================
+   RÉSULTAT
+   ========================================================= */
+function seriesScore(s){
+  const n = s.questions.length, ok = s.questions.filter((q,i)=>s.answers[i]===q.answer_index).length;
+  return {ok, n, sur20: n ? ok/n*20 : 0};
+}
+function mastery(){   // cumul sur toutes les séries de 20 (hors « mes erreurs »)
+  const m = {};
+  for(const s of S.series){
+    if(s.retry || s.status!=="done") continue;
+    s.questions.forEach((q,i)=>{ const a = s.answers[i]; if(a===undefined) return;
+      if(!m[q.notion_id]) m[q.notion_id] = {e:0, x:0}; m[q.notion_id].e += a===q.answer_index?1:0; m[q.notion_id].x++; });
+  }
+  return m;
+}
+function level(r){ return r===null ? ["na","Non évaluée"] : r>=SEUIL_MAITRISE ? ["ok","Maîtrisée"] : r>=SEUIL_FRAGILE ? ["mid","À consolider"] : ["ko","À revoir"]; }
+function mistakesOf(s){ return s.questions.filter((q,i)=>s.answers[i]!==undefined && s.answers[i]!==q.answer_index); }
+function verdict(x){ return x>=18 ? "Excellent, le cours est acquis." : x>=15 ? "Très bien. Revois les quelques erreurs et c'est bon." : x>=12 ? "Correct, mais il reste des points à consolider." : x>=8 ? "Des bases, mais plusieurs notions sont à reprendre. Relis la fiche." : "Le cours n'est pas encore su. Relis la fiche, puis refais un quiz."; }
+function showResult(keepScroll){
+  const s = S.series[S.cur], sc = seriesScore(s), miss = mistakesOf(s);
+  S.phase = "result"; save();
+  if(s.retry){
+    $("r-eye").textContent = "Mes erreurs";
+    $("r-score").innerHTML = `${sc.ok}<small> / ${sc.n}</small>`;
+    $("r-msg").textContent = miss.length ? `Encore ${miss.length} erreur${miss.length>1?"s":""} : relis les explications ci-dessous.` : "Toutes tes erreurs sont corrigées.";
+    $("r-sub").textContent = "";
+  } else {
+    const done = S.series.filter(x=>!x.retry && x.status==="done");
+    $("r-eye").textContent = done.length>1 ? `Quiz n°${done.indexOf(s)+1}` : "Ta note";
+    $("r-score").innerHTML = `${fmt(sc.sur20)}<small> / 20</small>`;
+    $("r-msg").textContent = verdict(sc.sur20);
+    $("r-sub").textContent = done.length>1 ? "Notes précédentes : " + done.filter(x=>x!==s).map(x=>fmt(seriesScore(x).sur20)).join(" · ") : "";
+  }
+  const m = mastery();
+  $("r-notions").innerHTML = S.notions.map(n=>{
+    const v = m[n.id], r = v && v.x ? v.e/v.x : null, [cls, lab] = level(r);
+    if(r===null) return "";
+    return `<div class="nrow"><div class="h"><b>${esc(n.label)}</b><span class="lvl ${cls}">${lab}</span></div><div class="meter"><i style="width:${Math.round(r*100)}%;background:${LVL_COL[cls]}"></i></div></div>`;
+  }).join("");
+  $("r-miss").innerHTML = miss.length ? `<h3 style="margin-top:22px">À revoir (${miss.length})</h3>` + miss.map(q=>`<details class="card" style="padding:12px 14px"><summary style="color:var(--tx);font-weight:500" class="rich">${rich(q.question)}</summary><div class="fb ok" style="margin-top:8px"><b class="v">Bonne réponse : <span class="rich" style="display:inline;font-weight:600">${rich(q.choices[q.answer_index])}</span></b><div class="rich">${rich(q.explanation)}</div></div></details>`).join("") : "";
+  $("r-ref").innerHTML = refButtons();
+  go("result", keepScroll);
+  const nx = S.series[queuedIndex()];
+  const nextBtn = !nx ? `<button class="btn ${miss.length?"sec":"pri"}" onclick="newQuiz()">20 nouvelles questions</button>`
+    : nx.status==="ready" ? `<button class="btn ${miss.length?"sec":"pri"}" onclick="newQuiz()">20 nouvelles questions</button>`
+    : nx.status==="error" ? `<button class="btn sec" onclick="genSeries(queuedIndex());showResult(true)">Réessayer : 20 nouvelles questions</button>`
+    : `<button class="btn ${miss.length?"sec":"pri"}" onclick="newQuiz()"><span class="minispin"></span>&nbsp;20 nouvelles questions</button>`;
+  bar(`${miss.length?`<button class="btn pri" onclick="retryMistakes()">Refaire mes ${miss.length} erreur${miss.length>1?"s":""}</button>`:""}${nextBtn}
+    <div class="row"><button class="btn txt" onclick="printResult()">Imprimer</button><button class="btn txt" onclick="newCourse()">Nouveau cours</button></div>`);
+}
+function retryMistakes(){
+  const miss = mistakesOf(S.series[S.cur]);
+  if(!miss.length) return;
+  S.series.push({status:"ready", retry:true, started:true, answers:{}, i:0, questions:shuffle(miss.map(q=>({...q, order:shuffle([0,1,2,3])})))});
+  S.cur = S.series.length-1; S.phase = "quiz"; save(); showQcm();
+}
+function newQuiz(){
+  queueSeries();
+  const s = S.series[queuedIndex()];
+  if(s.status==="ready") return startQuiz();
+  if(s.status==="error") genSeries(queuedIndex());
+  S.waitQuiz = true;
+  loading("Nouveau quiz", ["Préparation de 20 nouvelles questions…","Des questions différentes des précédentes…","Encore quelques secondes…"]);
+}
+
+/* =========================================================
+   CONSULTATION : fiche / carte mentale (panneau par-dessus)
    ========================================================= */
 const ICO_FICHE = `<svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h7M9 16h7"/></svg>`;
 const ICO_CARTE = `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="4.5" cy="5.5" r="2"/><circle cx="19.5" cy="5.5" r="2"/><circle cx="4.5" cy="18.5" r="2"/><circle cx="19.5" cy="18.5" r="2"/><path d="M9.6 10.2 6 7M14.4 10.2 18 7M9.6 13.8 6 17M14.4 13.8 18 17"/></svg>`;
 function refButtons(){
-  return `<div class="refb"><button onclick="openRef('fiche')" ${S.fiche?"":"disabled"}>${ICO_FICHE}Fiche flash</button><button onclick="openRef('carte')">${ICO_CARTE}Carte mentale</button></div>`;
+  return `<div class="refb"><button onclick="openRef('fiche')" ${S.fiche?"":"disabled"}>${ICO_FICHE}Fiche</button><button onclick="openRef('carte')">${ICO_CARTE}Carte mentale</button></div>`;
 }
 let refScroll = 0;
 function openRef(kind){
   const p = $("ref"), wasOpen = p.classList.contains("on");
   if(!wasOpen) refScroll = window.scrollY;
-  $("ref-t").textContent = kind==="fiche" ? "Fiche flash" : "Carte mentale";
+  $("ref-t").textContent = kind==="fiche" ? "Fiche" : "Carte mentale";
   $("ref-s").textContent = S.titre;
-  $("ref-b").innerHTML = kind==="fiche" ? (S.fiche ? ficheHTML(S.fiche) : "") : mindmapBlock("fiche");
-  p.dataset.kind = kind;
+  $("ref-b").innerHTML = kind==="fiche" ? (S.fiche ? ficheHTML(S.fiche) : "") : mindmapBlock(S.phase==="result" ? "bilan" : "fiche");
   p.classList.add("on"); document.body.style.overflow = "hidden";
   if(!wasOpen) p.scrollTop = 0;
   math($("ref-b"));
 }
-function closeRef(){
-  $("ref").classList.remove("on"); document.body.style.overflow = "";
-  window.scrollTo(0, refScroll);
+function closeRef(){ $("ref").classList.remove("on"); document.body.style.overflow = ""; window.scrollTo(0, refScroll); }
+
+/* =========================================================
+   IMPRESSION
+   ========================================================= */
+function printResult(){
+  const s = S.series[S.cur], m = mastery();
+  const done = S.series.filter(x=>!x.retry && x.status==="done");
+  const last = s.retry ? done[done.length-1] : s;
+  const sc = last ? seriesScore(last) : null;
+  const niv = {"2de":"Seconde","1re":"Première","Tle":"Terminale"}[S.niveau] || "";
+  const date = new Date().toLocaleDateString("fr-FR",{weekday:"long", day:"numeric", month:"long", year:"numeric"});
+  const icon = document.querySelector(".brand svg").outerHTML.replace('width="26" height="26"','width="34" height="34"');
+  const rows = S.notions.map(n=>{
+    const v = m[n.id], r = v && v.x ? v.e/v.x : null, [cls, lab] = level(r);
+    return `<tr><td><b>${esc(n.label)}</b></td><td style="color:${LVL_COL[cls]};font-weight:700">${lab}</td><td>${r===null?"—":v.e+" / "+v.x}</td><td><div class="pr-bar"><i style="width:${r===null?0:Math.round(r*100)}%;background:${LVL_COL[cls]}"></i></div></td></tr>`;
+  }).join("");
+  const miss = last ? mistakesOf(last) : [];
+  let html = `<div class="pr-head">${icon}<div><div class="n">Le Portique</div><div class="s">Fiche de révision et résultat</div></div><div class="d">${date}</div></div>
+    <h1>${esc(S.titre)}</h1><p class="pr-meta">${esc(S.matiere)}${niv?" · "+niv:""}</p>
+    <div class="pr-kpis" style="grid-template-columns:1fr 1fr"><div><span>Note${done.length>1?" (dernier quiz)":""}</span><b>${sc?fmt(sc.sur20)+" / 20":"—"}</b></div><div><span>Quiz faits</span><b>${done.length}${done.length>1?" · "+done.map(x=>fmt(seriesScore(x).sur20)).join(" · "):""}</b></div></div>
+    <h2>Par notion</h2><table class="pr-table"><thead><tr><th>Notion</th><th>Niveau</th><th>Bonnes réponses</th><th></th></tr></thead><tbody>${rows}</tbody></table>`;
+  if(miss.length) html += `<h2>Erreurs à revoir</h2>` + miss.map(q=>`<div class="pr-err"><div class="t">${esc(notionLabel(q.notion_id))}</div><div class="rich">${rich(q.question)}</div><div class="a"><b>Bonne réponse :</b> <span class="rich" style="display:inline">${rich(q.choices[q.answer_index])}</span><div class="rich" style="color:var(--mu)">${rich(q.explanation)}</div></div></div>`).join("");
+  html += `<div class="pr-map"><h2 style="margin-top:0">Carte mentale · ${esc(S.titre)}</h2>
+    <div class="legend" style="margin-bottom:6px"><span><i style="background:${LVL_COL.ok}"></i>Maîtrisée</span><span><i style="background:${LVL_COL.mid}"></i>À consolider</span><span><i style="background:${LVL_COL.ko}"></i>À revoir</span><span><i style="background:${LVL_COL.na}"></i>Non évaluée</span></div>${mindmapSVG("print")}</div>`;
+  if(S.fiche) html += `<div class="pr-fiche"><h2 style="margin-top:0">Fiche · ${esc(S.titre)}</h2>${ficheHTML(S.fiche)}</div>`;
+  html += `<div class="pr-foot">Le Portique · réviser, comprendre, maîtriser</div>`;
+  $("print").innerHTML = html; math($("print"));
+  setTimeout(()=>window.print(), 250);
+}
+
+/* ---------- Reprise ---------- */
+function resumeSession(){
+  S = store.get("seance", null); if(!S) return renderHome();
+  S.waitQuiz = false;
+  if(!S.fiche) fireFiche();
+  S.series.forEach((s,i)=>{ if(s.status==="loading" || (s.status==="error" && !s.started)) genSeries(i); });
+  if(queuedIndex()<0 && S.phase!=="quiz") queueSeries();
+  if(S.phase==="quiz") return showQcm();
+  if(S.phase==="result") return showResult();
+  showFiche();
 }
 
 /* =========================================================
@@ -798,7 +884,7 @@ function mindmapTree(mode){
   }).join("") + `</div></div>`;
 }
 function mindmapBlock(mode){
-  const legend = mode==="fiche" ? "" : `<div class="legend" style="margin-top:8px"><span><i style="background:${LVL_COL.ok}"></i>Maîtrisée</span><span><i style="background:${LVL_COL.mid}"></i>À consolider</span><span><i style="background:${LVL_COL.ko}"></i>Fragile</span></div>`;
+  const legend = mode==="fiche" ? "" : `<div class="legend" style="margin-top:8px"><span><i style="background:${LVL_COL.ok}"></i>Maîtrisée</span><span><i style="background:${LVL_COL.mid}"></i>À consolider</span><span><i style="background:${LVL_COL.ko}"></i>À revoir</span></div>`;
   const seg = `<div class="seg"><button class="${mmView==="arbre"?"on":""}" onclick="setMMView('arbre')">Arbre</button><button class="${mmView==="carte"?"on":""}" onclick="setMMView('carte')">Carte</button></div>`;
   const zoom = mmView==="carte" ? `<div class="zb"><button onclick="zoomMM(-1)" aria-label="Dézoomer">−</button><button onclick="zoomMM(1)" aria-label="Zoomer">+</button></div>` : "";
   return `<div class="mmtools">${seg}${zoom}</div>${legend}
@@ -808,8 +894,7 @@ function setMMView(v){
   mmView = v; mmZoom = 0;
   if($("ref").classList.contains("on")){ openRef("carte"); return; }
   const on = document.querySelector(".screen.on").id;
-  if(on==="fiche") showFiche();
-  if(on==="bilan"){ const y = window.scrollY; showBilan(); window.scrollTo(0, y); }
+  if(on==="fiche") showFiche(true);
 }
 function zoomMM(d){
   mmZoom = Math.max(0, Math.min(MM_ZOOM.length-1, mmZoom+d));
@@ -820,360 +905,28 @@ function zoomMM(d){
   });
 }
 
-/* =========================================================
-   5. TEST : enchaînement des paliers
-   ========================================================= */
-function startTest(){ S.phase = "test"; openPalier(S.order[0]); }
-function openPalier(kind){ S.cur = {kind}; save(); showPalierIntro(kind); }
-function nextPalier(){
-  const i = S.order.indexOf(S.cur.kind);
-  if(i < S.order.length-1) openPalier(S.order[i+1]); else showBilan();
-}
-function showPalierIntro(kind){
-  const p = S.paliers[kind], meta = PALIERS[kind];
-  const k = p.data ? (kind==="exercice" ? p.data.sous_questions.length : p.data.questions.length) : (kind==="qcm" ? (S.retravail?SIZES.retravailQcm:SIZES.qcm) : (S.retravail?SIZES.retravailCourtes:SIZES.courtes));
-  $("pi-n").textContent = meta.n + (S.retravail ? " · Retravail" : "");
-  $("pi-t").textContent = meta.t;
-  $("pi-d").textContent = meta.d(k);
-  if(p.status==="done"){ nextPalier(); return; }
-  if(p.status==="loading" && !pending[kind]) fire(kind);         // reprise après rechargement
-  if(p.status==="idle") fire(kind);
-  $("pi-state").innerHTML = p.status==="error" ? `<div class="err on">${esc(p.error)}</div>` :
-    p.status!=="ready" ? `<p class="muted"><span class="minispin"></span>&nbsp; Préparation des questions…</p>` : "";
-  go("pintro");
-  const skip = `<button class="btn txt" onclick="skipPalier()">Passer ce palier</button>`;
-  bar(p.status==="ready" ? `<button class="btn pri" onclick="beginPalier()">Commencer</button>${skip}`
-    : p.status==="error" ? `<button class="btn sec" onclick="fire('${kind}');showPalierIntro('${kind}')">Réessayer</button>${skip}`
-    : `<button class="btn pri" disabled>Patiente un instant…</button>${skip}`);
-}
-function skipPalier(){ S.paliers[S.cur.kind].status = "done"; S.paliers[S.cur.kind].skipped = true; save(); nextPalier(); }
-function beginPalier(){
-  const kind = S.cur.kind, p = S.paliers[kind];
-  if(kind==="qcm"){ p.i = p.i||0; showQcm(); }
-  if(kind==="courtes"){ p.i = p.i||0; showCourte(); }
-  if(kind==="exercice") showExo();
-}
-function finishPalier(kind){
-  const p = S.paliers[kind]; p.status = "done";
-  if(kind==="exercice") S.asked.push(p.data.titre);
-  else S.asked.push(...p.data.questions.map(q=>q.question));
-  save(); nextPalier();
-}
-
-/* ---------- Palier 1 : QCM ---------- */
-function showQcm(){
-  const p = S.paliers.qcm, qs = p.data.questions, q = qs[p.i];
-  if(!q){ finishPalier("qcm"); return; }
-  if(!q.order) { q.order = shuffle([0,1,2,3]); save(); }
-  $("q-h").textContent = "Palier 1 · Connaissances" + (S.retravail?" (retravail)":"");
-  $("q-c").textContent = `${p.i+1} / ${qs.length}`;
-  $("q-p").style.width = (p.i/qs.length*100)+"%";
-  $("q-notion").textContent = notionLabel(q.notion_id);
-  $("q-t").innerHTML = rich(q.question);
-  const a = p.answers[p.i];
-  $("q-ch").innerHTML = q.order.map((ci,k)=>{
-    let cls = "";
-    if(a!==undefined){ cls = ci===q.answer_index ? "ok" : ci===a ? "ko" : "dim"; }
-    return `<button class="choice ${cls}" ${a!==undefined?"disabled":""} onclick="answerQcm(${ci})"><span class="l">${"ABCD"[k]}</span><span class="rich">${rich(q.choices[ci])}</span></button>`;
-  }).join("");
-  if(a!==undefined){
-    const ok = a===q.answer_index;
-    $("q-fb").innerHTML = `<div class="fb ${ok?"ok":"ko"}"><b class="v">${ok?"Exact.":"Non."}</b><div class="rich">${rich(q.explanation)}</div></div>${refButtons()}`;
-    bar(`<button class="btn pri" onclick="nextQcm()">${p.i<qs.length-1?"Question suivante":"Terminer le palier"}</button>`);
-  } else { $("q-fb").innerHTML = ""; bar(null); }
-  go("qcm");
-}
-function answerQcm(ci){ const p = S.paliers.qcm; p.answers[p.i] = ci; save(); showQcm(); try{ navigator.vibrate && navigator.vibrate(ci===p.data.questions[p.i].answer_index?15:[30,40,30]); }catch{} }
-function nextQcm(){ S.paliers.qcm.i++; save(); showQcm(); }
-
-/* ---------- Pièces jointes (photo de la réponse) ---------- */
-let attachTarget = null;
-function attachHTML(){
-  return `<div class="attach" id="attach">${ansPhotos.map((p,i)=>`<div class="mini"><img src="${p.preview}" alt=""><button onclick="ansPhotos.splice(${i},1);renderAttach()">✕</button></div>`).join("")}
-    ${ansPhotos.length < (attachTarget==="exo"?3:1) ? `<button class="pill" onclick="$('ans-file').click()">📷 ${ansPhotos.length?"Ajouter":"Répondre en photo"}</button>` : ""}</div>`;
-}
-function renderAttach(){ const el = $("attach"); if(el) el.outerHTML = attachHTML(); }
-$("ans-file").addEventListener("change", async e=>{
-  const f = e.target.files[0]; e.target.value = ""; if(!f) return;
-  try{ ansPhotos.push(await compress(f)); }catch{} renderAttach();
-});
-
-/* ---------- Palier 2 : questions rédigées ---------- */
-function showCourte(){
-  const p = S.paliers.courtes, qs = p.data.questions, q = qs[p.i];
-  if(!q){ finishPalier("courtes"); return; }
-  $("c-c").textContent = `${p.i+1} / ${qs.length}`;
-  $("c-p").style.width = (p.i/qs.length*100)+"%";
-  $("c-verbe").textContent = q.verbe || "Question";
-  $("c-notion").textContent = notionLabel(q.notion_id);
-  $("c-t").innerHTML = rich(q.question);
-  const a = p.answers[p.i];
-  if(!a || a.grading){
-    attachTarget = "courte";
-    const draft = a ? a.text : (p.draft||"");
-    $("c-zone").innerHTML = `<textarea class="ans" id="c-ans" placeholder="Ta réponse…" ${a&&a.grading?"disabled":""}>${esc(draft)}</textarea>
-      <div class="hint">Formules : écris-les simplement (x^2, racine(x), ->). Ou photographie ta réponse.</div>${a&&a.grading?"":attachHTML()}<div id="c-err"></div>`;
-    $("c-ans").addEventListener("input", e=>{ p.draft = e.target.value; save(); });
-    bar(a&&a.grading ? `<button class="btn pri" disabled><span class="minispin"></span>&nbsp;Correction en cours…</button>`
-      : `<button class="btn pri" onclick="submitCourte()">Valider ma réponse</button><button class="btn txt" onclick="dontKnow()">Je ne sais pas</button>`);
-  } else {
-    const r = a.result, cls = r.points===r.max ? "ok" : r.points===0 ? "ko" : "mid";
-    $("c-zone").innerHTML = `${a.text?`<div class="card flat small"><div class="muted" style="margin-bottom:4px">Ta réponse</div>${esc(a.text).replace(/\n/g,"<br>")}</div>`:a.photo?`<div class="card flat small muted">Réponse envoyée en photo.</div>`:""}
-      <div class="fb ${cls}"><span class="score">${r.points}<small> / ${r.max}</small></span>
-        ${r.commentaire?`<div class="rich" style="margin-top:6px">${rich(r.commentaire)}</div>`:""}
-        <ul class="crit">${q.criteres.map((c,i)=>`<li class="${r.criteres_valides[i]?"y":"n"}"><i>${r.criteres_valides[i]?"✓":"✕"}</i><span class="rich">${rich(c)}</span></li>`).join("")}</ul>
-        <details ${r.points<r.max?"open":""}><summary>Réponse attendue</summary><div class="rich">${rich(q.reponse_attendue)}</div></details>
-      </div>${refButtons()}`;
-    bar(`<button class="btn pri" onclick="nextCourte()">${p.i<qs.length-1?"Question suivante":"Terminer le palier"}</button>`);
-  }
-  go("courte");
-}
-async function submitCourte(){
-  const p = S.paliers.courtes, q = p.data.questions[p.i];
-  const text = $("c-ans").value.trim();
-  if(!text && !ansPhotos.length){ $("c-err").innerHTML = `<div class="err on">Écris ta réponse ou joins une photo.</div>`; return; }
-  const imgs = ansPhotos.map(x=>({media_type:x.media_type, data:x.data}));
-  p.answers[p.i] = {text, photo:imgs.length>0, grading:true}; ansPhotos = []; showCourte();
-  try{
-    const r = await api("corriger_courte", {matiere:S.matiere, niveau:S.niveau, reponse:text, images:imgs,
-      question:{question:q.question, reponse_attendue:q.reponse_attendue, criteres:q.criteres}});
-    p.answers[p.i] = {text, photo:imgs.length>0, result:r}; p.draft = ""; save(); showCourte();
-  }catch(err){
-    delete p.answers[p.i]; p.draft = text; save(); showCourte();
-    $("c-err").innerHTML = `<div class="err on">${esc(err.message)}</div>`;
-  }
-}
-function dontKnow(){
-  const p = S.paliers.courtes, q = p.data.questions[p.i];
-  p.answers[p.i] = {text:"", result:{points:0, max:q.criteres.length, criteres_valides:q.criteres.map(()=>false), commentaire:"Lis la réponse attendue, puis reformule-la de mémoire avant de passer à la suite."}};
-  ansPhotos = []; save(); showCourte();
-}
-function nextCourte(){ S.paliers.courtes.i++; save(); showCourte(); }
-
-/* ---------- Palier 3 : exercice ---------- */
-function showExo(){
-  const p = S.paliers.exercice, ex = p.data;
-  $("e-format").textContent = ex.format || "Exercice";
-  $("e-titre").textContent = ex.titre;
-  $("e-dur").textContent = `≈ ${ex.duree_min} min · ${ex.sous_questions.reduce((s,q)=>s+q.points,0)} pts`;
-  $("e-enonce").innerHTML = rich(ex.enonce);
-  $("e-doc").innerHTML = ex.document ? `<div class="doc"><span class="eyebrow">Document</span><div class="rich">${rich(ex.document)}</div></div>` : "";
-  const res = p.result, grading = p.grading;
-  p.answers = p.answers || {};
-  $("e-sq").innerHTML = ex.sous_questions.map((s,i)=>{
-    const r = res && res.resultats.find(x=>x.id===s.id);
-    const cls = r ? (r.points===r.max?"ok":r.points===0?"ko":"mid") : "";
-    return `<div class="sq"><div class="sqh"><b>${i+1}. <span class="rich" style="display:inline">${rich(s.consigne)}</span></b><span class="pts">${s.points} pt${s.points>1?"s":""}</span></div>
-      ${r ? `${p.answers[s.id]?`<div class="card flat small">${esc(p.answers[s.id]).replace(/\n/g,"<br>")}</div>`:""}
-        <div class="fb ${cls}"><span class="score" style="font-size:22px">${fmtPts(r.points)}<small> / ${r.max}</small></span>${r.commentaire?`<div class="rich" style="margin-top:4px">${rich(r.commentaire)}</div>`:""}
-        <details ${r.points<r.max?"open":""}><summary>Corrigé</summary><div class="rich">${rich(s.corrige)}</div></details></div>`
-      : `<textarea class="ans" data-id="${s.id}" placeholder="Ta réponse…" style="min-height:100px" ${grading?"disabled":""}>${esc(p.answers[s.id]||"")}</textarea>`}</div>`;
-  }).join("");
-  document.querySelectorAll("#e-sq textarea").forEach(t=>t.addEventListener("input", e=>{ p.answers[e.target.dataset.id] = e.target.value; save(); }));
-  if(res){
-    const tot = res.resultats.reduce((s,r)=>s+r.points,0), max = res.resultats.reduce((s,r)=>s+r.max,0);
-    $("e-res").innerHTML = `<div class="card" style="margin-top:22px"><div class="muted small">Note de l'exercice</div><span class="score">${fmtPts(tot)}<small> / ${max}</small></span>${res.appreciation?`<div class="rich" style="margin-top:6px">${rich(res.appreciation)}</div>`:""}${refButtons()}</div>`;
-    bar(`<button class="btn pri" onclick="finishPalier('exercice')">Voir mon bilan</button>`);
-  } else {
-    attachTarget = "exo";
-    $("e-res").innerHTML = grading ? "" : `<div style="margin-top:18px"><div class="small muted">Tu as rédigé sur papier ? Photographie ta copie (3 pages max).</div>${attachHTML()}</div><div id="e-err"></div>`;
-    bar(grading ? `<button class="btn pri" disabled><span class="minispin"></span>&nbsp;Correction de ta copie…</button>`
-      : `<button class="btn pri" onclick="submitExo()">Rendre ma copie</button>`);
-  }
-  go("exo");
-}
-async function submitExo(){
-  const p = S.paliers.exercice, ex = p.data;
-  const filled = ex.sous_questions.some(s=>(p.answers[s.id]||"").trim());
-  if(!filled && !ansPhotos.length){ $("e-err").innerHTML = `<div class="err on">Réponds à au moins une question ou joins une photo de ta copie.</div>`; return; }
-  if(!ansPhotos.length && ex.sous_questions.some(s=>!(p.answers[s.id]||"").trim())){
-    if(!confirm("Certaines questions sont sans réponse. Rendre la copie quand même ?")) return;
-  }
-  const imgs = ansPhotos.map(x=>({media_type:x.media_type, data:x.data}));
-  p.grading = true; ansPhotos = []; showExo();
-  try{
-    const r = await api("corriger_exercice", {matiere:S.matiere, niveau:S.niveau, images:imgs, reponses:p.answers,
-      exercice:{titre:ex.titre, enonce:ex.enonce, document:ex.document,
-        sous_questions:ex.sous_questions.map(({id,consigne,points,corrige,criteres})=>({id,consigne,points,corrige,criteres}))}});
-    p.result = r; p.grading = false; save(); showExo();
-  }catch(err){
-    p.grading = false; save(); showExo();
-    $("e-err").innerHTML = `<div class="err on">${esc(err.message)}</div>`;
-  }
-}
-
-/* =========================================================
-   6. BILAN
-   ========================================================= */
-function mastery(){
-  const m = {};
-  const add = (id, e, x) => { if(!m[id]) m[id] = {e:0, x:0}; m[id].e += e; m[id].x += x; };
-  const P = S.paliers;
-  if(P.qcm && P.qcm.data) P.qcm.data.questions.forEach((q,i)=>{ const a = P.qcm.answers[i]; if(a!==undefined) add(q.notion_id, a===q.answer_index?1:0, 1); });
-  if(P.courtes && P.courtes.data) P.courtes.data.questions.forEach((q,i)=>{ const a = P.courtes.answers[i]; if(a && a.result) add(q.notion_id, a.result.points, a.result.max); });
-  if(P.exercice && P.exercice.result) P.exercice.data.sous_questions.forEach(s=>{ const r = P.exercice.result.resultats.find(x=>x.id===s.id); if(r) add(s.notion_id, r.points, r.max); });
-  return m;
-}
-function palierScore(kind){
-  const p = S.paliers[kind]; if(!p || !p.data || p.skipped) return null;
-  if(kind==="qcm"){ const k = Object.keys(p.answers).length; if(!k) return null; return {e:p.data.questions.filter((q,i)=>p.answers[i]===q.answer_index).length, x:k}; }
-  if(kind==="courtes"){ const r = Object.values(p.answers).filter(a=>a.result); if(!r.length) return null; return {e:r.reduce((s,a)=>s+a.result.points,0), x:r.reduce((s,a)=>s+a.result.max,0)}; }
-  if(kind==="exercice"){ if(!p.result) return null; return {e:p.result.resultats.reduce((s,r)=>s+r.points,0), x:p.result.resultats.reduce((s,r)=>s+r.max,0)}; }
-}
-function level(r){ return r===null ? ["na","Non évaluée"] : r>=SEUIL_MAITRISE ? ["ok","Maîtrisée"] : r>=SEUIL_FRAGILE ? ["mid","À consolider"] : ["ko","Fragile"]; }
-function showBilan(){
-  S.phase = "bilan";
-  const m = mastery();
-  if(!S.bilanSaved){ S.history.push({round:S.round, m}); S.bilanSaved = true; }
-  save();
-  const prev = S.history.length>1 ? S.history[S.history.length-2].m : null;
-  const tested = S.notions.filter(n=>S.paliers[S.order[0]] && S.paliers[S.order[0]].notions.includes(n.id));
-  let E=0, X=0; Object.values(m).forEach(v=>{E+=v.e; X+=v.x;});
-  const pct = X ? Math.round(E/X*100) : null;
-  $("b-eye").textContent = S.retravail ? `Bilan · retravail n°${S.round-1}` : "Bilan";
-  $("b-score").textContent = pct===null ? "—" : pct+" %";
-  $("b-sub").textContent = pct===null ? "" : "de réussite";
-  const weak = tested.filter(n=>{ const v=m[n.id]; return v && v.x && v.e/v.x < SEUIL_MAITRISE; });
-  $("b-msg").textContent = pct===null ? "Aucun palier n'a été fait." : weak.length ? `${weak.length} notion${weak.length>1?"s":""} à retravailler.` : "Toutes les notions évaluées sont maîtrisées.";
-  const names = {qcm:"QCM", courtes:"Rédigées", exercice:"Exercice"};
-  $("b-kpis").innerHTML = ["qcm","courtes","exercice"].map(k=>{
-    const s = S.order.includes(k) ? palierScore(k) : null;
-    return `<div class="kpi"><span>${names[k]}</span><b>${s ? fmtPts(s.e)+"/"+s.x : "—"}</b></div>`;
-  }).join("");
-  $("b-notions").innerHTML = tested.map(n=>{
-    const v = m[n.id], r = v && v.x ? v.e/v.x : null, [cls, lab] = level(r);
-    const pv = prev && prev[n.id] && prev[n.id].x ? Math.round(prev[n.id].e/prev[n.id].x*100) : null;
-    const col = {ok:"var(--ok)", mid:"var(--mid)", ko:"var(--ko)", na:"var(--mu2)"}[cls];
-    return `<div class="nrow"><div class="h"><b>${esc(n.label)}</b><span class="lvl ${cls}">${lab}</span></div>
-      <div class="meter"><i style="width:${r===null?0:Math.round(r*100)}%;background:${col}"></i></div>
-      ${r!==null||pv!==null?`<div class="evo">${r!==null?Math.round(r*100)+" %":"—"}${pv!==null?` · avant : ${pv} %`:""}</div>`:""}</div>`;
-  }).join("");
-  const ex = S.paliers.exercice;
-  $("b-appr").innerHTML = ex && ex.result && ex.result.appreciation ? `<h3 style="margin-top:20px">Appréciation de l'exercice</h3><div class="card rich">${rich(ex.result.appreciation)}</div>` : "";
-  $("b-appr").innerHTML += `<h3 style="margin-top:22px">Carte mentale</h3>` + mindmapBlock("bilan");
-  go("bilan");
-  bar(`${weak.length?`<button class="btn pri" onclick="startRetravail()">Retravailler mes points faibles</button>`:""}
-    <div class="row"><button class="btn sec" onclick="openSheet()">Imprimer</button><button class="btn sec" onclick="showFiche()">Revoir la fiche</button></div>
-    <button class="btn txt" onclick="newCourse()">Nouveau cours</button>`);
-}
-function startRetravail(){
-  const m = mastery();
-  const ids = S.notions.filter(n=>{ const v=m[n.id]; return v && v.x && v.e/v.x < SEUIL_MAITRISE; }).map(n=>n.id);
-  if(!ids.length) return;
-  S.retravail = true; S.round++; S.bilanSaved = false;
-  S.order = ["qcm","courtes"];
-  S.paliers = {}; S.order.forEach(k=>S.paliers[k] = {status:"idle", notions:ids});
-  S.order.forEach(fire);
-  S.phase = "test"; openPalier("qcm");
-}
-function newCourse(){ store.del("lycee"); S = null; photos = []; goHome(); }
-
-/* =========================================================
-   IMPRESSION DU BILAN
-   ========================================================= */
-const PRINT_OPTS = [
-  {k:"erreurs", t:"Erreurs à revoir", d:"Questions manquées avec la bonne réponse ou le corrigé"},
-  {k:"carte",   t:"Carte mentale",    d:"Colorée selon ta maîtrise, sur une page paysage"},
-  {k:"fiche",   t:"Fiche flash",      d:"L'essentiel du chapitre et les pièges"}
-];
-let printSel = {erreurs:true, carte:true, fiche:true};
-function openSheet(){
-  $("sheet-opts").innerHTML = PRINT_OPTS.map(o=>`<button class="opt ${printSel[o.k]?"on":""}" onclick="printSel.${o.k}=!printSel.${o.k};openSheet()"><span class="ck"></span><span><b>${o.t}</b><small>${o.d}</small></span></button>`).join("");
-  $("sheet").classList.add("on");
-}
-function closeSheet(){ $("sheet").classList.remove("on"); }
-function doPrint(){
-  buildPrint(printSel); closeSheet();
-  math($("print"));
-  setTimeout(()=>window.print(), 250);   // laisse KaTeX et la mise en page se terminer
-}
-function errorsHTML(){
-  const P = S.paliers, out = [];
-  if(P.qcm && P.qcm.data) P.qcm.data.questions.forEach((q,i)=>{
-    const a = P.qcm.answers[i]; if(a===undefined || a===q.answer_index) return;
-    out.push(`<div class="pr-err"><div class="t">QCM · ${esc(notionLabel(q.notion_id))}</div><div class="rich">${rich(q.question)}</div>
-      <div class="a"><b>Bonne réponse :</b> <span class="rich" style="display:inline">${rich(q.choices[q.answer_index])}</span><div class="rich" style="color:var(--mu)">${rich(q.explanation)}</div></div></div>`);
-  });
-  if(P.courtes && P.courtes.data) P.courtes.data.questions.forEach((q,i)=>{
-    const a = P.courtes.answers[i]; if(!a || !a.result || a.result.points===a.result.max) return;
-    out.push(`<div class="pr-err"><div class="t">Question rédigée · ${esc(notionLabel(q.notion_id))} · ${a.result.points}/${a.result.max}</div><div class="rich">${rich(q.question)}</div>
-      ${a.result.commentaire?`<div class="rich" style="color:var(--mu);margin-top:3px">${rich(a.result.commentaire)}</div>`:""}
-      <div class="a"><b>Réponse attendue :</b><div class="rich">${rich(q.reponse_attendue)}</div></div></div>`);
-  });
-  const ex = P.exercice;
-  if(ex && ex.result) ex.data.sous_questions.forEach((s,i)=>{
-    const r = ex.result.resultats.find(x=>x.id===s.id); if(!r || r.points===r.max) return;
-    out.push(`<div class="pr-err"><div class="t">Exercice, question ${i+1} · ${esc(notionLabel(s.notion_id))} · ${fmtPts(r.points)}/${r.max}</div><div class="rich">${rich(s.consigne)}</div>
-      ${r.commentaire?`<div class="rich" style="color:var(--mu);margin-top:3px">${rich(r.commentaire)}</div>`:""}
-      <div class="a"><b>Corrigé :</b><div class="rich">${rich(s.corrige)}</div></div></div>`);
-  });
-  return out.length ? out.join("") : `<p style="color:var(--mu)">Aucune erreur sur les paliers faits.</p>`;
-}
-function buildPrint(opt){
-  const m = mastery(), prev = S.history.length>1 ? S.history[S.history.length-2].m : null;
-  const tested = S.notions.filter(n=>S.paliers[S.order[0]] && S.paliers[S.order[0]].notions.includes(n.id));
-  let E=0, X=0; Object.values(m).forEach(v=>{E+=v.e; X+=v.x;});
-  const pct = X ? Math.round(E/X*100)+" %" : "—";
-  const niv = {"2de":"Seconde","1re":"Première","Tle":"Terminale"}[S.niveau] || "";
-  const date = new Date().toLocaleDateString("fr-FR",{weekday:"long", day:"numeric", month:"long", year:"numeric"});
-  const kp = k => { const s = S.order.includes(k) ? palierScore(k) : null; return s ? fmtPts(s.e)+" / "+s.x : "—"; };
-  const icon = document.querySelector(".brand svg").outerHTML.replace('width="26" height="26"','width="34" height="34"');
-  const rows = tested.map(n=>{
-    const v = m[n.id], r = v && v.x ? v.e/v.x : null, [cls, lab] = level(r);
-    const pv = prev && prev[n.id] && prev[n.id].x ? Math.round(prev[n.id].e/prev[n.id].x*100)+" %" : "";
-    return `<tr><td><b>${esc(n.label)}</b></td><td style="color:${LVL_COL[cls]};font-weight:700">${lab}</td>
-      <td>${r===null?"—":Math.round(r*100)+" %"}</td><td><div class="pr-bar"><i style="width:${r===null?0:Math.round(r*100)}%;background:${LVL_COL[cls]}"></i></div></td>${prev?`<td>${pv}</td>`:""}</tr>`;
-  }).join("");
-  const ex = S.paliers.exercice;
-  let html = `<div class="pr-head">${icon}<div><div class="n">Le Portique</div><div class="s">Bilan de révision${S.retravail?` · retravail n°${S.round-1}`:""}</div></div><div class="d">${date}</div></div>
-    <h1>${esc(S.titre)}</h1><p class="pr-meta">${esc(S.matiere)}${niv?" · "+niv:""}</p>
-    <div class="pr-kpis"><div><span>Réussite globale</span><b>${pct}</b></div><div><span>QCM</span><b>${kp("qcm")}</b></div><div><span>Questions rédigées</span><b>${kp("courtes")}</b></div><div><span>Exercice</span><b>${kp("exercice")}</b></div></div>
-    <h2>Maîtrise par notion</h2>
-    <table class="pr-table"><thead><tr><th>Notion</th><th>Niveau</th><th>Score</th><th></th>${prev?"<th>Avant</th>":""}</tr></thead><tbody>${rows}</tbody></table>
-    ${ex && ex.result && ex.result.appreciation ? `<h2>Appréciation de l'exercice</h2><div class="rich">${rich(ex.result.appreciation)}</div>` : ""}`;
-  if(opt.erreurs) html += `<h2>Erreurs à revoir</h2>${errorsHTML()}`;
-  if(opt.carte) html += `<div class="pr-map"><h2 style="margin-top:0">Carte mentale · ${esc(S.titre)}</h2>
-    <div class="legend" style="margin-bottom:6px"><span><i style="background:${LVL_COL.ok}"></i>Maîtrisée</span><span><i style="background:${LVL_COL.mid}"></i>À consolider</span><span><i style="background:${LVL_COL.ko}"></i>Fragile</span><span><i style="background:${LVL_COL.na}"></i>Non évaluée</span></div>${mindmapSVG("print")}</div>`;
-  if(opt.fiche && S.fiche) html += `<div class="pr-fiche"><h2 style="margin-top:0">Fiche flash · ${esc(S.titre)}</h2>${ficheHTML(S.fiche)}</div>`;
-  html += `<div class="pr-foot">Le Portique · réviser, comprendre, maîtriser</div>`;
-  $("print").innerHTML = html;
-}
-
-/* ---------- Reprise d'une séance ---------- */
-function resumeSession(){
-  S = store.get("lycee", null); if(!S) return renderHome();
-  for(const k of Object.keys(S.paliers||{})){ const p = S.paliers[k]; if(p.status==="loading") p.status = "idle"; }
-  if(S.paliers.courtes && S.paliers.courtes.answers) for(const [i,a] of Object.entries(S.paliers.courtes.answers)) if(a.grading) delete S.paliers.courtes.answers[i];
-  if(S.paliers.exercice) S.paliers.exercice.grading = false;
-  if(S.phase==="notions") return showNotions();
-  if(!S.fiche && S.phase!=="bilan") fire("fiche");
-  (S.order||[]).forEach(k=>{ if(S.paliers[k].status==="idle" || S.paliers[k].status==="error") fire(k); });
-  if(S.phase==="fiche") return showFiche();
-  if(S.phase==="bilan") return showBilan();
-  openPalier(S.cur ? S.cur.kind : S.order[0]);
-}
 
 /* =========================================================
    DÉMONSTRATION HORS LIGNE (#demo) — aucun appel à l'IA
    ========================================================= */
 const wait = (ms) => new Promise(r=>setTimeout(r, ms));
+const rnd = (a,b) => a + Math.floor(Math.random()*(b-a+1));
+function demoQuestion(nid){
+  // questions générées avec des coefficients aléatoires, réponses calculées
+  if(nid==="n2"){ const a=rnd(1,3), b=rnd(-6,6), c=rnd(-5,5), d=b*b-4*a*c;
+    return {notion_id:nid, question:`Pour \\(f(x)=${a}x^2${b<0?b:"+"+b}x${c<0?c:"+"+c}\\), que vaut \\(\\Delta\\) ?`, choices:[`\\(${d}\\)`,`\\(${b*b+4*a*c}\\)`,`\\(${-d}\\)`,`\\(${b*b-2*a*c}\\)`], answer_index:0, explanation:`\\(\\Delta=b^2-4ac=${b*b}-${4*a*c}=${d}\\).`}; }
+  if(nid==="n1"){ const a=rnd(1,3), al=rnd(-4,4), b=-2*a*al;
+    return {notion_id:nid, question:`Pour \\(f(x)=${a}x^2${b<0?b:"+"+b}x+1\\), que vaut \\(\\alpha\\) ?`, choices:[`\\(${al}\\)`,`\\(${-al}\\)`,`\\(${b}\\)`,`\\(${al*2}\\)`], answer_index:0, explanation:`\\(\\alpha=-\\dfrac{b}{2a}=${al}\\).`}; }
+  if(nid==="n4"){ const al=rnd(-4,4), be=rnd(-5,5);
+    return {notion_id:nid, question:`Le sommet de \\(f(x)=2(x${al<0?"+"+(-al):"-"+al})^2${be<0?be:"+"+be}\\) est :`, choices:[`\\((${al};${be})\\)`,`\\((${-al};${be})\\)`,`\\((${be};${al})\\)`,`\\((${al};${-be})\\)`], answer_index:0, explanation:`Sommet \\((\\alpha;\\beta)=(${al};${be})\\) : attention au signe dans la parenthèse.`}; }
+  const neg = Math.random()<.5;
+  return {notion_id:"n3", question:`Si \\(a${neg?"<":">"}0\\) et \\(\\Delta>0\\), entre les racines le trinôme est :`, choices:[neg?"positif":"négatif", neg?"négatif":"positif","nul","de signe variable"], answer_index:0, explanation:"Entre les racines, il est du signe contraire de \\(a\\)."};
+}
 async function demoApi(step, payload){
-  await wait(step==="analyse" ? 1600 : step.startsWith("corriger") ? 1200 : 900 + Math.random()*1800);
-  const D = DEMO;
-  if(step==="analyse") return D.analyse;
-  if(step==="fiche") return D.fiche;
-  if(step==="qcm") return {questions: D.qcm.filter(q=>payload.notions.some(n=>n.id===q.notion_id)).slice(0, payload.count)};
-  if(step==="courtes") return {questions: D.courtes.filter(q=>payload.notions.some(n=>n.id===q.notion_id)).slice(0, payload.count)};
-  if(step==="exercice") return D.exercice;
-  if(step==="corriger_courte"){
-    const n = payload.question.criteres.length, len = (payload.reponse||"").length;
-    const k = payload.images.length ? n : Math.min(n, Math.floor(len/25));
-    return {criteres_valides:payload.question.criteres.map((_,i)=>i<k), points:k, max:n, commentaire: k===n ? "Réponse complète et précise." : "Démonstration : la note dépend ici de la longueur de ta réponse. En vrai, Claude vérifie chaque critère."};
-  }
-  if(step==="corriger_exercice"){
-    const res = payload.exercice.sous_questions.map(s=>{ const l=(payload.reponses[s.id]||"").length; const pts = Math.min(s.points, Math.round(l/30*2)/2); return {id:s.id, points:pts, max:s.points, commentaire: pts===s.points?"Correct et bien justifié.":"Démonstration : compare avec le corrigé."}; });
-    return {resultats:res, appreciation:"Démonstration : en vrai, tu obtiens ici un point fort et une priorité de travail précise."};
-  }
+  await wait(step==="analyse" ? 1600 : 900 + Math.random()*1800);
+  if(step==="analyse") return DEMO.analyse;
+  if(step==="fiche") return DEMO.fiche;
+  if(step==="qcm"){ const ids = payload.notions.map(n=>n.id); return {questions: Array.from({length:payload.count}, (_,i)=>{ const q = demoQuestion(ids[i%ids.length]); const o = shuffle([0,1,2,3]); return {...q, choices:o.map(k=>q.choices[k]), answer_index:o.indexOf(0)}; })}; }
 }
 const DEMO = {
   analyse:{readable:true, matiere:"Mathématiques", niveau:"1re", titre:"Second degré : forme canonique et discriminant",
@@ -1226,9 +979,9 @@ const DEMO = {
     ]}
 };
 
+
 /* ---------- Démarrage ---------- */
 renderHome();
-if(DEMO_MODE){ $("drop-t").textContent = "Mode démonstration"; }
 </script>
 </body>
 </html>
