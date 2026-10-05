@@ -283,12 +283,17 @@ details .rich{margin-top:8px;font-size:15px}
 .katex-display{overflow-x:auto;overflow-y:hidden;padding:4px 0}
 
 #result{padding-bottom:200px}
+.hero{text-align:center;padding:6px 0 18px}
+.hero-ico svg{width:88px;height:88px;display:block;margin:0 auto 14px;border-radius:20px;box-shadow:0 10px 30px rgba(143,162,255,.18)}
+.hero-t{font-family:Georgia,"Times New Roman",serif;font-size:40px;line-height:1.1;letter-spacing:.01em;color:var(--tx)}
+.hero-by{margin-top:8px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--mu)}
+body.on-home .brand{visibility:hidden}
 #result details summary{list-style:none}
 #result details summary::before{content:none}
 #result details[open] summary{margin-bottom:2px}
 .big .score small{font-size:22px;color:var(--mu);font-weight:600}
 </style>
-<body>
+<body class="on-home">
 <div class="wrap">
 
   <header class="top">
@@ -301,8 +306,12 @@ details .rich{margin-top:8px;font-size:15px}
 
   <!-- ACCUEIL -->
   <section class="screen on" id="home">
-    <h1>Révise ton cours.</h1>
-    <p class="lead">Prends ton cours en photo : tu obtiens une fiche, une carte mentale et un quiz de 20 questions noté sur 20.</p>
+    <div class="hero">
+      <div class="hero-ico" id="hero-ico"></div>
+      <div class="hero-t">Le Portique</div>
+      <div class="hero-by">by Alexandre HEZEZ</div>
+    </div>
+    <p class="lead" style="text-align:center">Prends ton cours en photo : tu obtiens une fiche, une carte mentale et un quiz de 20 questions noté sur 20.</p>
     <div class="card" id="activate" style="display:none;border-color:var(--ac)">
       <h3>Activer cet appareil</h3>
       <p class="small muted" style="margin:0 0 10px">Saisis le code d'accès (une seule fois sur cet appareil).</p>
@@ -427,6 +436,7 @@ function math(el){
 }
 function go(id, keepScroll){
   document.querySelectorAll(".screen").forEach(s=>s.classList.toggle("on", s.id===id));
+  document.body.classList.toggle("on-home", id==="home");
   const stepOf = {fiche:"fiche", qcm:"quiz", result:"resultat"}[id];
   $("steps").style.display = stepOf ? "flex" : "none";
   $("btn-quit").style.display = stepOf ? "block" : "none";
@@ -988,6 +998,7 @@ const DEMO = {
 
 
 /* ---------- Démarrage ---------- */
+$("hero-ico").innerHTML = document.querySelector(".brand svg").outerHTML.replace('width="26" height="26"','');
 renderHome();
 </script>
 </body>
