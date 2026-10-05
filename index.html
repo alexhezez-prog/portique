@@ -303,7 +303,12 @@ details .rich{margin-top:8px;font-size:15px}
   <section class="screen on" id="home">
     <h1>Révise ton cours.</h1>
     <p class="lead">Prends ton cours en photo : tu obtiens une fiche, une carte mentale et un quiz de 20 questions noté sur 20.</p>
-    <div id="resume"></div>
+    <div class="card" id="activate" style="display:none;border-color:var(--ac)">
+      <h3>Activer cet appareil</h3>
+      <p class="small muted" style="margin:0 0 10px">Saisis le code d'accès (une seule fois sur cet appareil).</p>
+      <div class="row"><input class="field" id="act-code" type="password" autocomplete="off" placeholder="Code"><button class="btn sec" style="flex:0 0 110px;min-height:44px" onclick="activateFromField()">Activer</button></div>
+    </div>
+      <div id="resume"></div>
     <label class="drop" for="file">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>
       <b id="drop-t">Photographier le cours</b>
@@ -317,12 +322,7 @@ details .rich{margin-top:8px;font-size:15px}
       <li><b>Quiz</b> : 20 questions, chacune corrigée et expliquée.</li>
       <li><b>Note sur 20</b> : refais tes erreurs ou enchaîne 20 nouvelles questions.</li>
     </ol>
-    <div class="card" id="activate" style="display:none">
-      <h3>Activer cet appareil</h3>
-      <p class="small muted" style="margin:0 0 10px">Saisis le code d'accès (une seule fois sur cet appareil).</p>
-      <div class="row"><input class="field" id="act-code" type="password" autocomplete="off" placeholder="Code"><button class="btn sec" style="flex:0 0 110px;min-height:44px" onclick="activateFromField()">Activer</button></div>
-    </div>
-  </section>
+</section>
 
   <!-- CHARGEMENT -->
   <section class="screen" id="loading">
@@ -390,8 +390,14 @@ let DEMO_MODE = false;
   const h = new URLSearchParams(location.hash.slice(1));
   if(h.has("demo")) DEMO_MODE = true;
   if(h.get("cle")){ cfg = h.get("serveur") ? {url:h.get("serveur"), code:h.get("cle"), custom:true} : {url:cfg.url, code:h.get("cle")}; store.set("cfg", cfg); }
-  if(h.has("demo") || h.get("cle")) history.replaceState(null, "", location.pathname);
+  if(h.has("demo")) history.replaceState(null, "", location.pathname);
 })();
+/* Sur iPhone, l'icône de l'écran d'accueil a sa propre mémoire, séparée de Safari :
+   on garde le code dans l'adresse pour que « Sur l'écran d'accueil » l'emporte. */
+function keepCodeInUrl(){
+  if(!DEMO_MODE && cfg.code) history.replaceState(null, "", location.pathname + "#cle=" + encodeURIComponent(cfg.code));
+}
+keepCodeInUrl();
 
 /* ---------- État ---------- */
 let photos = [];
@@ -506,7 +512,7 @@ function compress(file, max=1600){
 }
 function activateFromField(){
   const code = $("act-code").value.trim(); if(!code) return;
-  cfg = {url:DEFAULT_WORKER_URL||cfg.url, code}; store.set("cfg", cfg);
+  cfg = {url:DEFAULT_WORKER_URL||cfg.url, code}; store.set("cfg", cfg); keepCodeInUrl();
   $("activate").style.display = "none"; $("home-err").classList.remove("on");
 }
 function goHome(){ stopLoading(); go("home"); renderHome(); }
