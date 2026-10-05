@@ -71,6 +71,29 @@ function text(v, max = MAX_TEXT) {
 }
 
 /**
+ * Certains modèles renvoient parfois un tableau ou un objet sous forme de texte JSON
+ * (ex. notions: "[{...}]"). On les remet en forme, récursivement.
+ */
+function normalize(v, depth = 0) {
+  if (depth > 6) return v;
+  if (typeof v === "string") {
+    const t = v.trim();
+    if ((t.startsWith("[") && t.endsWith("]")) || (t.startsWith("{") && t.endsWith("}"))) {
+      try { return normalize(JSON.parse(t), depth + 1); } catch { return v; }
+    }
+    return v;
+  }
+  if (Array.isArray(v)) return v.map((x) => normalize(x, depth + 1));
+  if (v && typeof v === "object") {
+    const o = {};
+    for (const [k, x] of Object.entries(v)) o[k] = normalize(x, depth + 1);
+    return o;
+  }
+  return v;
+}
+const asArray = (v) => (Array.isArray(v) ? v : []);
+
+/**
  * Appelle Claude et récupère l'entrée de l'outil demandé.
  * tool_choice "auto" + consigne explicite : compatible avec tous les modèles récents.
  * En cas de refus du modèle (400/404) ou de réponse sans outil, on essaie le suivant.
@@ -118,7 +141,7 @@ async function callTool(env, { system, content, tool, maxTokens = 4096 }) {
     const data = await res.json();
     const block = (data.content || []).find((b) => b.type === "tool_use" && b.name === tool.name);
     if (block && data.stop_reason !== "max_tokens") {
-      return { input: block.input || {}, usage: data.usage || null, model };
+      return { input: normalize(block.input || {}), usage: data.usage || null, model };
     }
     lastError = data.stop_reason === "max_tokens"
       ? "La réponse était trop longue. Essaie avec moins de pages."
@@ -219,7 +242,7 @@ Si les photos sont illisibles ou ne montrent pas un cours, mets readable à fals
   if (input.readable === false) {
     return { readable: false, problem: input.problem || "Je n'arrive pas à lire le cours. Reprends les photos bien à plat, avec de la lumière." };
   }
-  const notions = (input.notions || [])
+  const notions = asArray(input.notions)
     .filter((n) => n && n.label)
     .map((n, i) => ({ id: "n" + (i + 1), label: String(n.label), resume: String(n.resume || "") }));
   if (!input.transcription || notions.length < 1) {
@@ -304,7 +327,7 @@ async function stepFiche(env, body) {
 Rédige une fiche de révision FLASH d'une page sur les notions listées uniquement : l'essentiel, puis des blocs courts (définitions, propriétés, formules, dates, méthodes, exemples types) rattachés à leur notion, puis 2 à 4 pièges classiques à éviter (erreurs typiques des lycéens sur ce chapitre). Chaque bloc doit pouvoir être mémorisé en moins d'une minute.
 Construis aussi la carte mentale : le sujet au centre, une branche par notion listée (même notion_id, dans l'ordre), 2 à 4 feuilles par branche qui résument les idées à retenir en quelques mots.` }],
   });
-  const carte = input.carte && Array.isArray(input.carte.branches) ? {
+  const carte = input.carte && typeof input.carte === "object" && Array.isArray(input.carte.branches) ? {
     centre: String(input.carte.centre || body.titre || "Cours").slice(0, 80),
     branches: input.carte.branches
       .filter((b) => b && b.label)
@@ -317,8 +340,8 @@ Construis aussi la carte mentale : le sujet au centre, une branche par notion li
   } : null;
   return {
     essentiel: input.essentiel || "",
-    blocs: (input.blocs || []).filter((b) => b && b.contenu),
-    pieges: (input.pieges || []).filter((p) => p && p.piege),
+    blocs: asArray(input.blocs).filter((b) => b && b.contenu),
+    pieges: asArray(input.pieges).filter((p) => p && p.piege),
     carte,
     usage,
   };
@@ -363,7 +386,7 @@ Crée exactement ${count} questions à choix multiples, réparties équitablemen
 - Moitié connaissances exactes (définition, formule, date, condition d'application), moitié compréhension (reconnaître un cas, appliquer à un exemple nouveau, repérer une erreur de raisonnement).
 - 4 choix, une seule bonne réponse sans ambiguïté ; distracteurs = erreurs typiques de lycéen, jamais absurdes. Varie la position de la bonne réponse. Pas de "toutes/aucune de ces réponses".` }],
   });
-  const questions = (input.questions || []).filter(validQcm).map((q) => ({
+  const questions = asArray(input.questions).map((q) => (q && typeof q === "object" ? { ...q, answer_index: Number(q.answer_index) } : q)).filter(validQcm).map((q) => ({
     ...q, notion_id: ctx.ids.includes(q.notion_id) ? q.notion_id : ctx.ids[0],
   }));
   if (questions.length < 2) throw new UserError("Les questions n'ont pas pu être générées. Réessaie.", 502);
@@ -412,7 +435,7 @@ async function stepCourtes(env, body) {
 Crée exactement ${count} questions à réponse courte rédigée, sur des notions différentes si possible, notées sur 3 points avec 3 critères d'un point.
 Varie les verbes (définir, justifier, calculer, expliquer…). Chaque question doit obliger l'élève à restituer ou à raisonner, pas à recopier. Une réponse doit tenir en 1 à 5 lignes sur un téléphone.` }],
   });
-  const questions = (input.questions || [])
+  const questions = asArray(input.questions)
     .filter((q) => q && q.question && q.reponse_attendue && Array.isArray(q.criteres) && q.criteres.length >= 1)
     .map((q) => ({
       ...q,
@@ -470,7 +493,7 @@ Adapte le format à la matière :
 - Langues : compréhension d'un court texte que tu rédiges puis courte production.
 Le corrigé de chaque sous-question doit être complet et ses critères (un par point) vérifiables.` }],
   });
-  const sous = (input.sous_questions || [])
+  const sous = asArray(input.sous_questions)
     .filter((s) => s && s.consigne && s.corrige)
     .map((s, i) => ({
       id: "q" + (i + 1),
@@ -538,7 +561,7 @@ ${reponse || "(voir la photo jointe)"}
 </reponse>`,
   });
   const { input, usage } = await callTool(env, { system: CORRECTEUR, content, tool: CORRIGER_COURTE_TOOL, maxTokens: 1500 });
-  const valides = criteres.map((_, i) => Boolean((input.criteres_valides || [])[i]));
+  const valides = criteres.map((_, i) => Boolean(asArray(input.criteres_valides)[i]));
   return {
     criteres_valides: valides,
     points: valides.filter(Boolean).length,
@@ -600,7 +623,7 @@ Note chaque sous-question (id identique) en points, par pas de 0,5, sans dépass
   });
   const { input, usage } = await callTool(env, { system: CORRECTEUR, content, tool: CORRIGER_EXO_TOOL, maxTokens: 3000 });
 
-  const byId = Object.fromEntries((input.resultats || []).filter((r) => r && r.id).map((r) => [r.id, r]));
+  const byId = Object.fromEntries(asArray(input.resultats).filter((r) => r && r.id).map((r) => [r.id, r]));
   const resultats = sous.map((s) => {
     const r = byId[s.id] || {};
     const pts = Math.round(Math.min(Math.max(Number(r.points_obtenus) || 0, 0), s.points) * 2) / 2;
@@ -646,7 +669,7 @@ export default {
     } catch (e) {
       if (e instanceof UserError) return json({ error: e.message }, e.status, cors);
       console.log("Unexpected", e && e.stack);
-      return json({ error: "Erreur interne du serveur." }, 500, cors);
+      return json({ error: "Erreur interne du serveur (" + String((e && e.message) || e).slice(0, 160) + ")." }, 500, cors);
     }
   },
 };
