@@ -306,7 +306,8 @@ details .rich{margin-top:8px;font-size:15px}
     <div class="card" id="activate" style="display:none;border-color:var(--ac)">
       <h3>Activer cet appareil</h3>
       <p class="small muted" style="margin:0 0 10px">Saisis le code d'accès (une seule fois sur cet appareil).</p>
-      <div class="row"><input class="field" id="act-code" type="password" autocomplete="off" placeholder="Code"><button class="btn sec" style="flex:0 0 110px;min-height:44px" onclick="activateFromField()">Activer</button></div>
+      <input class="field" id="act-code" type="text" inputmode="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Ton code d'accès" style="display:block;width:100%;min-height:50px;font-size:18px;margin-bottom:10px" onkeydown="if(event.key==='Enter')activateFromField()">
+      <button class="btn pri" onclick="activateFromField()">Activer</button>
     </div>
       <div id="resume"></div>
     <label class="drop" for="file">
