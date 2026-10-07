@@ -399,7 +399,7 @@ let DEMO_MODE = false;
 (function fromLink(){
   const h = new URLSearchParams(location.hash.slice(1));
   if(h.has("demo")) DEMO_MODE = true;
-  if(h.get("cle")){ cfg = h.get("serveur") ? {url:h.get("serveur"), code:h.get("cle"), custom:true} : {url:cfg.url, code:h.get("cle")}; store.set("cfg", cfg); }
+  if(h.get("cle") && h.get("cle") !== store.get("badcle", "")){ cfg = h.get("serveur") ? {url:h.get("serveur"), code:h.get("cle"), custom:true} : {url:cfg.url, code:h.get("cle")}; store.set("cfg", cfg); }
   if(h.has("demo")) history.replaceState(null, "", location.pathname);
 })();
 /* Sur iPhone, l'icône de l'écran d'accueil a sa propre mémoire, séparée de Safari :
@@ -476,7 +476,7 @@ async function api(step, payload){
     });
   }catch{ throw new Error("Pas de connexion au serveur. Vérifie Internet et réessaie."); }
   const data = await res.json().catch(()=>({error:"Réponse illisible du serveur."}));
-  if(res.status===401){ const e = new Error("Code d'activation incorrect."); e.activate = true; throw e; }
+  if(res.status===401){ store.set("badcle", cfg.code); const e = new Error("Code d'accès incorrect. Saisis le bon code ci-dessus."); e.activate = true; throw e; }
   if(!res.ok || data.error) throw new Error(data.error || "Erreur "+res.status);
   return data;
 }
@@ -523,7 +523,7 @@ function compress(file, max=1600){
 }
 function activateFromField(){
   const code = $("act-code").value.trim(); if(!code) return;
-  cfg = {url:DEFAULT_WORKER_URL||cfg.url, code}; store.set("cfg", cfg); keepCodeInUrl();
+  cfg = {url:DEFAULT_WORKER_URL||cfg.url, code}; store.set("cfg", cfg); if(store.get("badcle","")===code) store.del("badcle"); keepCodeInUrl();
   $("activate").style.display = "none"; $("home-err").classList.remove("on");
 }
 function goHome(){ stopLoading(); go("home"); renderHome(); }
